@@ -1,0 +1,586 @@
+local _, rat = ...
+local L = rat.L
+
+local TestFrame = CreateFrame("Frame", "RemixTestFrame", UIParent) -- not to be used in release
+TestFrame:SetSize(1630, 895)  -- approximate size of RemixArtifactFrame
+TestFrame:SetPoint("TOP")
+TestFrame:Show()
+TestFrame.tex = TestFrame:CreateTexture()
+TestFrame.tex:SetAllPoints()
+TestFrame.tex:SetAtlas("Artifacts-DemonHunter-BG")
+
+
+RemixArtifactFrame = TestFrame -- do not use in release
+RemixArtifactFrame.attachedItemID = 242556  -- example item to test with (havoc DH)
+
+local function SetModelCamera(modelFrame, cameraData)
+	modelFrame.lastCamera = cameraData;
+	modelFrame:MakeCurrentCameraCustom();
+
+	if cameraData then
+		modelFrame:SetCameraPosition(cameraData.posX or 3.5, cameraData.posY or 0, cameraData.posZ or 0);
+		modelFrame:SetCameraTarget(cameraData.targetX or 0, cameraData.targetY or 0, cameraData.targetZ or 0.1);
+		modelFrame:SetFacing(cameraData.facing or math.pi / 2);
+		modelFrame:SetPitch(cameraData.pitch or -0.75);
+	else
+		-- default cam if cameraData nil
+		modelFrame:SetCameraPosition(3.5, 0, 0);
+		modelFrame:SetCameraTarget(0, 0, 0.1);
+		modelFrame:SetFacing(math.pi / 2);
+		modelFrame:SetPitch(-0.75);
+	end
+end
+
+-- handles all logic for selecting a swatch button
+local function SelectSwatch(swatchButton)
+	local panel = RemixArtifactFrame.customPanel
+	if not panel or not panel.swatchRows or not swatchButton then return end
+
+	panel.selectedSwatch = swatchButton;
+
+	-- hide all selection highlights
+	for _, row in ipairs(panel.swatchRows) do
+		for _, btn in ipairs(row) do
+			btn.selection:Hide();
+		end
+	end
+	swatchButton.selection:Show(); -- show selection on the target button
+
+
+	-- update the model and camera
+	local specID = RemixArtifactFrame.attachedItemID
+	local specData = rat.AppSwatchData[specID]
+	if not specData then return end
+	
+	local appearanceData = specData.appearances[swatchButton.rowIndex]
+	local tintData = swatchButton.swatchData -- selected tint data
+
+	if tintData and appearanceData then
+		local cameraToUse = appearanceData.camera; -- default to the main model camera
+
+		if panel.showSecondary and specData.secondary then
+			panel.modelFrame:SetItem(specData.secondary, tintData.modifiedID); -- prioritize the secondary item if the checkbox is checked
+
+			if appearanceData.secondaryCamera then -- use secondaryCamera if defined
+				cameraToUse = appearanceData.secondaryCamera;
+			end
+		elseif tintData.displayID then
+			panel.modelFrame:SetDisplayInfo(tintData.displayID); -- use displayID over default but not secondary
+		else
+			panel.modelFrame:SetItem(specData.itemID, tintData.modifiedID); -- use default itemID
+		end
+		
+		SetModelCamera(panel.modelFrame, cameraToUse);
+		panel.modelFrame:SetAnimation(appearanceData.animation or 0); -- handles the funni demo lock artifact + druid shapeshifts
+	end
+end
+
+local function AreRequirementsMet(req)
+	-- check quests
+	if req.quests then
+		if req.any then
+			local anyComplete = false
+			for _, questID in ipairs(req.quests) do
+				if C_QuestLog.IsQuestFlaggedCompleted(questID) then
+					anyComplete = true;
+					break; -- the "collect 1 of the pillars" thing
+				end
+			end
+			if not anyComplete then
+				return false;
+			end
+		else
+			for _, questID in ipairs(req.quests) do
+				if not C_QuestLog.IsQuestFlaggedCompleted(questID) then
+					return false;
+				end
+			end
+		end
+	end
+
+	-- check achievements
+	if req.achievements then
+		for _, achID in ipairs(req.achievements) do
+			local _, _, _, completed, _, _, _, _, _, _, _, _, wasEarnedByMe = GetAchievementInfo(achID)
+			
+			if req.charspecific then -- some achieves aren't really warbound and tints want the char-specific ones
+				if not wasEarnedByMe then
+					return false;
+				end
+			else
+				if not completed then
+					return false;
+				end
+			end
+		end
+	end
+	return true
+end
+
+-- combined refresh function for colors, tooltips, and locks
+local function RefreshSwatches()
+	local panel = RemixArtifactFrame and RemixArtifactFrame.customPanel
+	if not panel or not panel.swatchRows then return end
+
+	local specID = RemixArtifactFrame.attachedItemID
+	local specData = rat.AppSwatchData[specID]
+	if not specData then return end
+
+	for i, row in ipairs(panel.swatchRows) do
+		for k, swatchButton in ipairs(row) do
+			if swatchButton then
+				local appearanceData = specData.appearances[i];
+				local tintData = appearanceData and appearanceData.tints[k];
+				
+				-- set the swatch data for the button
+				swatchButton.swatchData = tintData;
+
+				if tintData then
+					-- tint swatch color
+					swatchButton.swatch:SetVertexColor(UISwatchColorToRGB(tintData.color));
+
+					-- swatch tooltip
+					if tintData.tooltip then
+						swatchButton:SetScript("OnEnter", function(self)
+							GameTooltip:SetOwner(self, "ANCHOR_TOP");
+							GameTooltip_AddNormalLine(GameTooltip, tintData.tooltip);
+							GameTooltip:Show();
+						end)
+						swatchButton:SetScript("OnLeave", GameTooltip_Hide);
+					else
+						swatchButton:SetScript("OnEnter", nil);
+						swatchButton:SetScript("OnLeave", nil);
+					end
+
+					-- swatch locked
+					local req = tintData.req;
+					swatchButton.locked:SetShown(req and not AreRequirementsMet(req));
+				else
+					swatchButton.locked:Hide();
+				end
+			end
+		end
+	end
+end
+
+-- tabs set on the artifact traits window 
+local function Tab_OnClick(self)
+	PanelTemplates_SetTab(self:GetParent(), self:GetID())
+
+	if self.tabType == "default" then
+		-- show blizz original child frames (this is probably evil)
+		for _, child in ipairs(RemixArtifactFrame.originalChildren) do
+			child:Show();
+		end
+		if RemixArtifactFrame.customPanel then
+			RemixArtifactFrame.customPanel:Hide();
+		end
+		if RemixArtifactFrame.DisabledOverlay then
+			RemixArtifactFrame.DisabledOverlay:Hide();
+		end
+		if RemixArtifactFrame.CommitSpinner then
+			RemixArtifactFrame.CommitSpinner:Hide();
+		end
+	elseif self.tabType == "custom" then
+		-- hide show blizz original child frames (this is probably evil)
+		for _, child in ipairs(RemixArtifactFrame.originalChildren) do
+			child:Hide();
+		end
+		if RemixArtifactFrame.customPanel then
+			RemixArtifactFrame.customPanel:Show();
+		end
+	end
+	PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB); -- 841
+end
+
+function UISwatchColorToRGB(colorInt)
+	if not colorInt then return 1, 1, 1 end
+	local b = bit.band(colorInt, 0xFF) / 255;
+	local g = bit.band(bit.rshift(colorInt, 8), 0xFF) / 255;
+	local r = bit.band(bit.rshift(colorInt, 16), 0xFF) / 255;
+	return r, g, b;
+end
+
+local function RefreshRemixArtifactFrame()
+	if not RemixArtifactFrame then return end
+
+	if not RemixArtifactFrame.customPanel or not RemixArtifactFrame.customPanel.swatchRows then
+		SetupRemixTabs();
+		if not RemixArtifactFrame.customPanel or not RemixArtifactFrame.customPanel.swatchRows then
+			return;
+		end
+	end
+
+	local powersTab = _G[RemixArtifactFrame:GetName().."Tab1"]
+	if powersTab then
+		Tab_OnClick(powersTab);
+	end
+
+	-- appearance row names
+	local specID = RemixArtifactFrame.attachedItemID
+	local specData = rat.AppSwatchData[specID]
+	local panel = RemixArtifactFrame.customPanel
+
+	if specID and rat.ArtifactAppearanceNames[specID] then
+		local appInfo = rat.ArtifactAppearanceNames[specID]
+
+		local tempAppNames = appInfo.appearances
+		for i, appnameFS in ipairs(panel.appNameFontStrings or {}) do
+			local appearanceName = tempAppNames[i] or ""
+			--local color = "ff98977c"; -- grey-ish color
+			local color = "FFE6CC80"; -- artifact color (locked)
+
+			if specData and specData.appearances[i] and specData.appearances[i].tints[1] then
+				local firstTintData = specData.appearances[i].tints[1]
+				if not firstTintData.req or AreRequirementsMet(firstTintData.req) then
+					color = "FFE6CC80"; -- artifact color (unlocked)
+				end
+			end
+			appnameFS:SetText(WrapTextInColorCode(appearanceName, color));
+		end
+		
+		if RemixArtifactFrame.tex then
+			RemixArtifactFrame.tex:SetAtlas(appInfo.background or "Artifacts-DemonHunter-BG");
+		end
+
+		if panel.classicon then
+			panel.classicon:SetAtlas(appInfo.icon or "Artifacts-DemonHunter-BG-rune");
+		end
+	end
+
+	if panel.secondaryCheckbox then
+		if specData and specData.secondary then
+			panel.secondaryCheckbox:Show();
+		else
+			panel.secondaryCheckbox:Hide();
+			panel.showSecondary = false;
+			panel.secondaryCheckbox:SetChecked(false);
+		end
+	end
+	
+	if panel.artifactSelectorDropdown then
+		panel.artifactSelectorDropdown:GenerateMenu();
+	end
+
+	RefreshSwatches()
+
+	-- select the first swatch of the first row when opened
+	local panel = RemixArtifactFrame.customPanel
+	if panel and panel.swatchRows and panel.swatchRows[1] and panel.swatchRows[1][1] then
+		SelectSwatch(panel.swatchRows[1][1]);
+	end
+end
+
+-- dropdown item selector (do not add in release version)
+local function ArtifactSelector_GenerateMenu(dropdown, rootDescription)
+	local function SetSelected(data)
+		RemixArtifactFrame.attachedItemID = data;
+		RefreshRemixArtifactFrame();
+	end
+
+	local function IsSelected(data)
+		return data == RemixArtifactFrame.attachedItemID;
+	end
+
+	rootDescription:CreateTitle("Select Artifact")
+	
+	local sortedItemIDs = {}
+	for id in pairs(rat.AppSwatchData) do
+		table.insert(sortedItemIDs, id);
+	end
+	table.sort(sortedItemIDs)
+	
+	for _, specID in ipairs(sortedItemIDs) do
+		local itemName = C_Item.GetItemInfo(specID) or ("Item " .. specID);
+		rootDescription:CreateRadio(itemName, IsSelected, SetSelected, specID);
+	end
+end
+
+-- setup tabs + panel
+local function SetTabs(frame, numTabs, ...)
+	frame.numTabs = numTabs
+	local frameName = frame:GetName()
+
+	if not frame.originalChildren then
+		frame.originalChildren = { frame:GetChildren() };
+	end
+
+	if not frame.customPanel then
+		local panel = CreateFrame("Frame", nil, frame)
+		panel:SetAllPoints(true)
+		panel:Hide()
+		frame.customPanel = panel
+		local CloseButton = CreateFrame("Button", nil, panel, "UIPanelCloseButtonNoScripts")
+		CloseButton:SetPoint("TOPRIGHT", -10, -10)
+		CloseButton:SetScript("OnClick", function()
+			frame:Hide();
+		end)
+		panel.closeButton = CloseButton
+
+
+		panel.appNameFontStrings = {}
+		panel.swatchRows = {}
+		panel:SetFrameLevel(frame:GetFrameLevel() + 10)
+
+		-- 9-slice border + vignette
+		local border = panel:CreateTexture(nil, "BORDER", nil, 7)
+		border:SetPoint("TOPLEFT", panel, "TOPLEFT", -6, 6)
+		border:SetPoint("BOTTOMRIGHT", panel, "BOTTOMRIGHT", 6, -6)
+		border:SetAtlas("ui-frame-legionartifact-border")
+		local bordertest = 166
+		border:SetTextureSliceMargins(bordertest, bordertest, bordertest, bordertest)
+		border:SetTextureSliceMode(Enum.UITextureSliceMode.Tiled)
+		panel.border = border
+
+		local vignette = panel:CreateTexture(nil, "BACKGROUND", nil, 1)
+		vignette:SetAllPoints()
+		vignette:SetAtlas("Artifacts-BG-Shadow")
+		panel.vignette = vignette
+
+		local classicon = panel:CreateTexture(nil, "BACKGROUND", nil, 1)
+		classicon:SetPoint("CENTER", panel, "CENTER", -125, -200)
+		classicon:SetSize(270, 270)
+		classicon:SetAtlas("Artifacts-DemonHunter-BG-rune")
+		panel.classicon = classicon
+
+		-- model
+		panel.modelFrame = CreateFrame("PlayerModel", nil, panel)
+		panel.modelFrame:SetPoint("TOPLEFT", panel, "TOP", -(frame:GetWidth()/6), -16)
+		panel.modelFrame:SetPoint("BOTTOMRIGHT", panel, "BOTTOMRIGHT", -16, 16)
+		panel.modelFrame.lastCamera = nil
+
+		panel.modelFrame:SetScript("OnModelLoaded", function(self)
+			SetModelCamera(self, self.lastCamera);
+		end)
+
+		panel.modelFrame:SetScript("OnUpdate", function(self, elapsed)
+			if not self.isSpinning then return end
+			self.spinAngle = (self.spinAngle or 0) + (elapsed * 0.5);
+			self:SetFacing(self.spinAngle);
+		end)
+		panel.modelFrame.isSpinning = true
+
+		local spinButton = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
+		spinButton:SetSize(40, 40)
+		spinButton:SetPoint("BOTTOM", panel, "BOTTOM", 0, 50)
+		spinButton.tex = spinButton:CreateTexture()
+		spinButton.tex:SetPoint("TOPLEFT", spinButton, "TOPLEFT", 7, -7)
+		spinButton.tex:SetPoint("BOTTOMRIGHT", spinButton, "BOTTOMRIGHT", -7, 7)
+		spinButton.tex:SetAtlas("CreditsScreen-Assets-Buttons-Pause")
+		spinButton:SetScript("OnClick", function(self)
+			panel.modelFrame.isSpinning = not panel.modelFrame.isSpinning;
+			self.tex:SetAtlas(panel.modelFrame.isSpinning and "CreditsScreen-Assets-Buttons-Pause" or "CreditsScreen-Assets-Buttons-Play");
+		end)
+
+		-- displays secondary models ie druid weapons instead of shapeshift, offhands, etc.
+		local secondaryCheckbox = CreateFrame("CheckButton", nil, panel, "UICheckButtonTemplate")
+		secondaryCheckbox:SetPoint("LEFT", spinButton, "RIGHT", 10, 0)
+		secondaryCheckbox.Text:SetText(L["ShowSecondary"])
+		panel.secondaryCheckbox = secondaryCheckbox
+		panel.showSecondary = false
+		secondaryCheckbox:SetScript("OnClick", function(self)
+			panel.showSecondary = self:GetChecked()
+			if panel.selectedSwatch then
+				SelectSwatch(panel.selectedSwatch); -- refresh model
+			end
+		end)
+		secondaryCheckbox:Hide()
+
+		-- forge frame
+		local forge = {}
+		local forgebg = panel:CreateTexture(nil, "BACKGROUND", nil, 0)
+		forgebg:SetPoint("TOPLEFT", panel, "TOPLEFT", 50, -100)
+		forgebg:SetPoint("BOTTOMLEFT", panel, "BOTTOMLEFT", 50, 100)
+		forgebg:SetWidth(460)
+		forgebg:SetAtlas("Forge-Background")
+
+		local forgeTitle = panel:CreateFontString(nil, "OVERLAY", "Fancy24Font")
+		forgeTitle:SetPoint("CENTER", forgebg, "TOP", 0, -60)
+		forgeTitle:SetSize(400, 80)
+		forgeTitle:SetText(WrapTextInColorCode(ARTIFACTS_APPEARANCE_TAB_TITLE, "fff0b837"))
+
+		-- forge border
+		local borderFrame = CreateFrame("Frame", nil, panel)
+		borderFrame:SetPoint("TOPLEFT", forgebg, -4, 4)
+		borderFrame:SetPoint("BOTTOMRIGHT", forgebg, 4, -4)
+		forge.borderFrame = borderFrame
+
+		local bordercornersize = 64
+
+		local bordertop = borderFrame:CreateTexture(nil, "ARTWORK", nil, 2)
+		bordertop:SetPoint("TOPLEFT", 16, 0)
+		bordertop:SetPoint("TOPRIGHT", -16, 0)
+		bordertop:SetHeight(16)
+		bordertop:SetAtlas("_ForgeBorder-Top", true)
+		forge.bordertop = bordertop
+
+		local borderbottom = borderFrame:CreateTexture(nil, "ARTWORK", nil, 2)
+		borderbottom:SetPoint("BOTTOMLEFT", 16, 0)
+		borderbottom:SetPoint("BOTTOMRIGHT", -16, 0)
+		borderbottom:SetHeight(16)
+		borderbottom:SetAtlas("_ForgeBorder-Top", true)
+		borderbottom:SetTexCoord(0, 1, 1, 0) -- flip vertically
+		forge.borderbottom = borderbottom
+
+		local borderleft = borderFrame:CreateTexture(nil, "ARTWORK", nil, 2)
+		borderleft:SetPoint("TOPLEFT", 0, -16)
+		borderleft:SetPoint("BOTTOMLEFT", 0, 16)
+		borderleft:SetWidth(16)
+		borderleft:SetAtlas("!ForgeBorder-Right", true)
+		borderleft:SetTexCoord(1, 0, 0, 1) -- flip horizontally
+		forge.borderleft = borderleft
+
+		local borderright = borderFrame:CreateTexture(nil, "ARTWORK", nil, 2)
+		borderright:SetPoint("TOPRIGHT", 0, -16)
+		borderright:SetPoint("BOTTOMRIGHT", 0, 16)
+		borderright:SetWidth(16)
+		borderright:SetAtlas("!ForgeBorder-Right", true)
+		forge.borderright = borderright
+
+		local bordertopleft = borderFrame:CreateTexture(nil, "ARTWORK", nil, 3)
+		bordertopleft:SetPoint("TOPLEFT")
+		bordertopleft:SetSize(bordercornersize, bordercornersize)
+		bordertopleft:SetAtlas("ForgeBorder-CornerBottomLeft")
+		bordertopleft:SetTexCoord(0, 1, 1, 0)
+		forge.bordertopleft = bordertopleft
+
+		local borderbottomleft = borderFrame:CreateTexture(nil, "ARTWORK", nil, 3)
+		borderbottomleft:SetPoint("BOTTOMLEFT")
+		borderbottomleft:SetSize(bordercornersize, bordercornersize)
+		borderbottomleft:SetAtlas("ForgeBorder-CornerBottomLeft")
+		forge.borderbottomleft = borderbottomleft
+
+		local bordertopright = borderFrame:CreateTexture(nil, "ARTWORK", nil, 3)
+		bordertopright:SetPoint("TOPRIGHT")
+		bordertopright:SetSize(bordercornersize, bordercornersize)
+		bordertopright:SetAtlas("ForgeBorder-CornerBottomRight")
+		bordertopright:SetTexCoord(0, 1, 1, 0)
+		forge.bordertopright = bordertopright
+
+		local borderbottomright = borderFrame:CreateTexture(nil, "ARTWORK", nil, 3)
+		borderbottomright:SetPoint("BOTTOMRIGHT")
+		borderbottomright:SetSize(bordercornersize, bordercornersize)
+		borderbottomright:SetAtlas("ForgeBorder-CornerBottomRight")
+		forge.borderbottomright = borderbottomright
+
+		-- artifact select dropdown (will not be added to release version)
+		local dropdown = CreateFrame("DropdownButton", nil, panel, "WowStyle1DropdownTemplate")
+		dropdown:SetPoint("TOP", forgebg, "TOP", 0, -10)
+		dropdown:SetWidth(300)
+		dropdown:SetDefaultText("Select Artifact")
+		dropdown:SetupMenu(ArtifactSelector_GenerateMenu)
+		panel.artifactSelectorDropdown = dropdown
+
+		-- appearance rows and swatches
+		local MaxRows = 6; -- 3 is remix, 6 is mainline
+		for i = 1, MaxRows do
+			local appstrip = panel:CreateTexture(nil, "ARTWORK", nil, 1);
+			local HeightSpacer = 150;
+			if MaxRows == 6 then
+				HeightSpacer = 95;
+			end
+			appstrip:SetPoint("TOPLEFT", forgebg, "TOPLEFT", 15, i*-HeightSpacer);
+			appstrip:SetPoint("TOPRIGHT", forgebg, "TOPRIGHT", -15, i*-HeightSpacer);
+			appstrip:SetHeight(103);
+			appstrip:SetAtlas("Forge-AppearanceStrip");
+
+			local appname = panel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge");
+			appname:SetPoint("CENTER", forgebg, "TOPLEFT", 125, i*-HeightSpacer-50);
+			appname:SetSize(150, 100);
+			appname:SetJustifyH("CENTER");
+			appname:SetJustifyV("MIDDLE");
+			appname:SetWordWrap(true);
+			panel.appNameFontStrings[i] = appname;
+
+			panel.swatchRows[i] = {};
+
+			for k = 1, 4 do
+				local apptint = CreateFrame("Button", nil, panel);
+				apptint:SetSize(40, 40);
+				apptint:SetPoint("CENTER", forgebg, "TOP", (k-.5)*50, i*-HeightSpacer-50);
+
+				apptint.rowIndex = i;
+				apptint.tintIndex = k;
+
+				apptint.bg = apptint:CreateTexture(nil, "BACKGROUND", nil, 0);
+				apptint.bg:SetAllPoints();
+				apptint.bg:SetAtlas("Forge-ColorSwatchBackground");
+				apptint.swatch = apptint:CreateTexture(nil, "ARTWORK", nil, 1);
+				apptint.swatch:SetAllPoints();
+				apptint.swatch:SetAtlas("Forge-ColorSwatch");
+				apptint.border = apptint:CreateTexture(nil, "OVERLAY", nil, 2);
+				apptint.border:SetAllPoints();
+				apptint.border:SetAtlas("Forge-ColorSwatchBorder");
+				apptint.highlight = apptint:CreateTexture(nil, "HIGHLIGHT", nil, 3);
+				apptint.highlight:SetAllPoints();
+				apptint.highlight:SetAtlas("Forge-ColorSwatchHighlight");
+				apptint.selection = apptint:CreateTexture(nil, "OVERLAY", nil, 4);
+				apptint.selection:SetAllPoints();
+				apptint.selection:SetAtlas("Forge-ColorSwatchSelection");
+				apptint.selection:Hide();
+				apptint.locked = apptint:CreateTexture(nil, "OVERLAY", nil, 5);
+				apptint.locked:SetAllPoints();
+				apptint.locked:SetAtlas("Forge-Lock");
+				apptint.locked:Hide();
+
+				apptint:SetScript("OnClick", function(self)
+					if self.selection:IsShown() then return end
+					
+					SelectSwatch(self);
+
+					if self.locked:IsShown() then
+						PlaySound(SOUNDKIT.UI_70_ARTIFACT_FORGE_APPEARANCE_LOCKED); -- 54131
+					else
+						PlaySound(SOUNDKIT.UI_70_ARTIFACT_FORGE_APPEARANCE_COLOR_SELECT ); -- 54130
+					end
+				end)
+
+				panel.swatchRows[i][k] = apptint;
+			end
+		end
+
+		-- set top row first swatch
+		local firstSwatch = panel.swatchRows[1] and panel.swatchRows[1][1]
+		if firstSwatch then
+			SelectSwatch(firstSwatch);
+		end
+	end
+
+	-- create tabs
+	for i = 1, numTabs do
+		local tab = CreateFrame("Button", frameName.."Tab"..i, frame, "PanelTabButtonTemplate")
+		tab:SetID(i)
+		tab:SetText(select(i, ...))
+		tab:SetScript("OnClick", Tab_OnClick)
+
+		if i == 1 then
+			tab.tabType = "default";
+			tab:SetPoint("TOPLEFT", frame, "BOTTOMLEFT", 11, 2);
+		elseif i == 2 then
+			tab.tabType = "custom";
+			tab:SetPoint("TOPLEFT", _G[frameName.."Tab"..(i-1)], "TOPRIGHT", 3, 0);
+		end
+	end
+	Tab_OnClick(_G[frameName.."Tab1"]);
+end
+
+local tabsInitialized = false
+local function SetupRemixTabs()
+	if tabsInitialized or not RemixArtifactFrame then return end
+	tabsInitialized = true;
+
+	SetTabs(RemixArtifactFrame, 2, L["Traits"], L["Appearances"]);
+
+	RemixArtifactFrame:HookScript("OnShow", function(self)
+		RefreshRemixArtifactFrame();
+	end)
+end
+
+EventRegistry:RegisterCallback("RemixArtifactFrame.SetTreeID", SetupRemixTabs);
+SetupRemixTabs();
+
+local frameEventHandler = CreateFrame("Frame");
+frameEventHandler:RegisterEvent("REMIX_ARTIFACT_UPDATE");
+frameEventHandler:SetScript("OnEvent", function()
+	RefreshRemixArtifactFrame();
+end);
