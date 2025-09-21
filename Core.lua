@@ -191,8 +191,18 @@ RefreshSwatches = function(frame)
 
 					-- swatch locked
 					swatchButton.locked:SetShown(tintData.req and not AreRequirementsMet(tintData.req));
+
+
+					-- transmog collected
+					if specData.itemID and tintData.modifiedID then
+						local hasTransmog = C_TransmogCollection.PlayerHasTransmog(specData.itemID, tintData.modifiedID)
+						swatchButton.transmogIcon:SetShown(hasTransmog)
+					else
+						swatchButton.transmogIcon:Hide()
+					end
 				else
 					swatchButton.locked:Hide();
+					swatchButton.transmogIcon:Hide();
 				end
 			end
 		end
@@ -437,6 +447,19 @@ SetupCustomPanel = function(frame)
 			apptint.locked:SetAllPoints();
 			apptint.locked:SetAtlas("Forge-Lock");
 			apptint.locked:Hide();
+
+			-- transmog collected icon
+			apptint.transmogIcon = apptint:CreateTexture(nil, "OVERLAY", nil, 6);
+			apptint.transmogIcon:SetSize(20, 20);
+			apptint.transmogIcon:SetPoint("TOPRIGHT", 5, 5);
+			apptint.transmogIcon:SetAtlas("Crosshair_Transmogrify_32");
+			apptint.transmogIcon:SetScript("OnEnter", function(self)
+				GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+				GameTooltip:SetText(TRANSMOGRIFY_TOOLTIP_APPEARANCE_KNOWN);
+				GameTooltip:Show();
+			end);
+			apptint.transmogIcon:SetScript("OnLeave", GameTooltip_Hide);
+			apptint.transmogIcon:Hide();
 
 			apptint:SetScript("OnClick", function(self)
 				if self.selection:IsShown() and not self.locked:IsShown() then

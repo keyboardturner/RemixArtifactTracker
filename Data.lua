@@ -28,10 +28,10 @@ rat.AppSwatchData = {
 			[3] = { -- Valorous
 				camera = { posX = 5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 17,	color = 15636775,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 26,	color = -16753230,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 27,	color = -7941557,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 28,	color = -203,		tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 17,	color = 15636775,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 26,	color = -16753230,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 27,	color = -7941557,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 28,	color = -203,		tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -88,10 +88,10 @@ rat.AppSwatchData = {
 			[3] = { -- Valorous
 				secondaryCamera = { posX = 2, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 5*math.pi / 6, pitch = 0, },
 				tints = {
-					{ modifiedID = 21,	color = 3324917,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 24,	color = -8124,	 	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 22,	color = -6081340,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 23,	color = -4443328,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 21,	color = 3324917,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 24,	color = -8124,	 	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 22,	color = -6081340,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 23,	color = -4443328,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -152,10 +152,10 @@ rat.AppSwatchData = {
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = -.1, facing = 3*math.pi / 2, pitch = -0.75, },
 				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 32,	color = -2102506,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 30,	color = -14840534,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 31,	color = -2608076,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 29,	color = -13023499,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 32,	color = -2102506,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 30,	color = -14840534,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 31,	color = -2608076,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 29,	color = -13023499,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -214,10 +214,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 20,	color = 16064287,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = 9231422,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = 10767320,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 17,	color = 8200995,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 20,	color = 16064287,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = 9231422,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = 10767320,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 17,	color = 8200995,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -270,10 +270,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 18,	color = -7998908,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 17,	color = -12913687,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = -2606084,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 20,	color = -2475488,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 18,	color = -7998908,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 17,	color = -12913687,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = -2606084,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 20,	color = -2475488,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -325,10 +325,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 18,	color = -2621457,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 17,	color = -5955107,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = 42719,		tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 20,	color = 2621373,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 18,	color = -2621457,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 17,	color = -5955107,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = 42719,		tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 20,	color = 2621373,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -392,10 +392,10 @@ rat.AppSwatchData = {
 				secondaryCamera = { posX = 3, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = 3*math.pi / 2, pitch = .75, },
 				animation = 0,
 				tints = {
-					{ displayID = 66790,	modifiedID = 17,	color = 2352725,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ displayID = 66791,	modifiedID = 18,	color = 15581735,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ displayID = 66792,	modifiedID = 19,	color = 9779671,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ displayID = 66793,	modifiedID = 20,	color = 8517880,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ displayID = 66790,	modifiedID = 17,	color = 2352725,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ displayID = 66791,	modifiedID = 18,	color = 15581735,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ displayID = 66792,	modifiedID = 19,	color = 9779671,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ displayID = 66793,	modifiedID = 20,	color = 8517880,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -465,10 +465,10 @@ rat.AppSwatchData = {
 				camera = { posX = 4, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .7, facing = 7*math.pi / 4, pitch = 0, },
 				secondaryCamera = { posX = 3, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi/2, pitch = .75, },
 				tints = {
-					{ displayID = 66705,	modifiedID = 17,	color = 7926557,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ displayID = 66704,	modifiedID = 18,	color = 3064568,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ displayID = 66706,	modifiedID = 19,	color = 12071158,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ displayID = 66707,	modifiedID = 20,	color = 16189962,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ displayID = 66705,	modifiedID = 17,	color = 7926557,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ displayID = 66704,	modifiedID = 18,	color = 3064568,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ displayID = 66706,	modifiedID = 19,	color = 12071158,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ displayID = 66707,	modifiedID = 20,	color = 16189962,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -525,10 +525,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 20,	color = -1,			tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = -12527023,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = -6603316,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 17,	color = -13326639,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 20,	color = -1,			tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = -12527023,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = -6603316,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 17,	color = -13326639,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -587,10 +587,10 @@ rat.AppSwatchData = {
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 28,	color = 16314894,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 26,	color = 2616127,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 25,	color = 2588395,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 27,	color = 8265410,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 28,	color = 16314894,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 26,	color = 2616127,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 25,	color = 2588395,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 27,	color = 8265410,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -647,10 +647,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 24,	color = -3510016,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 22,	color = -933326,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 23,	color = -3137509,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 21,	color = -7871957,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 24,	color = -3510016,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 22,	color = -933326,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 23,	color = -3137509,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 21,	color = -7871957,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -702,10 +702,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 25,	color = -2238150,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 26,	color = -14367683,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 27,	color = -5692496,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 28,	color = -7134908,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 25,	color = -2238150,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 26,	color = -14367683,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 27,	color = -5692496,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 28,	color = -7134908,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -758,10 +758,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 13,	color = 8708667,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 14,	color = 4647141,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 15,	color = 8009433,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 16,	color = 15199526,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 13,	color = 8708667,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 14,	color = 4647141,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 15,	color = 8009433,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 16,	color = 15199526,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -813,10 +813,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 18,	color = 65280,		tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 17,	color = 255,		tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = 16711680,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 20,	color = 4127224,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 18,	color = 65280,		tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 17,	color = 255,		tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = 16711680,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 20,	color = 4127224,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -868,10 +868,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 22,	color = -1794761,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 21,	color = -11766293,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 23,	color = -11670549,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 24,	color = -722965,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 22,	color = -1794761,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 21,	color = -11766293,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 23,	color = -11670549,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 24,	color = -722965,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -924,10 +924,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 23,	color = 16730549,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 22,	color = 3866564,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 21,	color = 4313599,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 24,	color = 14482943,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 23,	color = 16730549,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 22,	color = 3866564,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 21,	color = 4313599,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 24,	color = 14482943,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -978,10 +978,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 24,	color = 15723566,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 22,	color = 16736568,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 23,	color = 3538903,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 21,	color = 3199231,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 24,	color = 15723566,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 22,	color = 16736568,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 23,	color = 3538903,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 21,	color = 3199231,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1033,10 +1033,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 17,	color = 3256556,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = 3140633,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = 16756275,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 20,	color = 16182072,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 17,	color = 3256556,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = 3140633,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = 16756275,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 20,	color = 16182072,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1095,10 +1095,10 @@ rat.AppSwatchData = {
 				camera = { posX = 2.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				secondaryCamera = { posX = 2, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = 3*math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 19,	color = -628222,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = -11288576,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 17,	color = -16089158,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 20,	color = -8687122,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 19,	color = -628222,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = -11288576,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 17,	color = -16089158,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 20,	color = -8687122,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1162,10 +1162,10 @@ rat.AppSwatchData = {
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 19,	color = -1052887,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = -12259786,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 17,	color = -9572366,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 20,	color = -3072213,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 19,	color = -1052887,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = -12259786,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 17,	color = -9572366,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 20,	color = -3072213,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1223,10 +1223,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 22,	color = 9895754,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 21,	color = 4456425,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 23,	color = 16762196,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 24,	color = 13648383,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 22,	color = 9895754,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 21,	color = 4456425,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 23,	color = 16762196,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 24,	color = 13648383,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1281,10 +1281,10 @@ rat.AppSwatchData = {
 			[3] = { -- Valorous
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi/2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 20,	color = 14726704,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = 9103712,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = 9189825,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 17,	color = 4251876,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 20,	color = 14726704,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = 9103712,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = 9189825,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 17,	color = 4251876,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1338,10 +1338,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 19,	color = 15876397,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = 3063335,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 17,	color = 3094245,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 20,	color = 3007454,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 19,	color = 15876397,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = 3063335,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 17,	color = 3094245,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 20,	color = 3007454,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1393,10 +1393,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 23,	color = 10304702,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 22,	color = 7138880,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 21,	color = 4907719,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 24,	color = 15397434,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 23,	color = 10304702,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 22,	color = 7138880,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 21,	color = 4907719,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 24,	color = 15397434,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1448,10 +1448,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 18,	color = -1059740,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 17,	color = -6762780,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = -8957506,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 20,	color = -41117,		tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 18,	color = -1059740,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 17,	color = -6762780,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = -8957506,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 20,	color = -41117,		tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1503,10 +1503,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 20,	color = 15144984,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = 2986533,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = 6960054,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 17,	color = 9518140,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 20,	color = 15144984,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = 2986533,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = 6960054,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 17,	color = 9518140,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1557,10 +1557,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 27,	color = -7259484,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 26,	color = -14584816,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 25,	color = -11759397,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 28,	color = -2054101,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 27,	color = -7259484,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 26,	color = -14584816,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 25,	color = -11759397,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 28,	color = -2054101,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1615,10 +1615,10 @@ rat.AppSwatchData = {
 			[3] = { -- Valorous
 				camera = { posX = 5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 19,	color = 15725596,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = 1172800,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 17,	color = 7614128,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 20,	color = 16711680,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 19,	color = 15725596,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = 1172800,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 17,	color = 7614128,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 20,	color = 16711680,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1675,10 +1675,10 @@ rat.AppSwatchData = {
 			[3] = { -- Valorous
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 18,	color = 6089290,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 17,	color = 16769676,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = 10106346,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 20,	color = 13835035,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 18,	color = 6089290,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 17,	color = 16769676,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = 10106346,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 20,	color = 13835035,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1742,10 +1742,10 @@ rat.AppSwatchData = {
 				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = -.1, facing = math.pi / 2, pitch = -0.75, },
 				animation = 213,
 				tints = {
-					{ modifiedID = 17,	color = -5181882,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = -1821185,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = -31947,		tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 20,	color = -399040,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 17,	color = -5181882,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = -1821185,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = -31947,		tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 20,	color = -399040,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1809,10 +1809,10 @@ rat.AppSwatchData = {
 			[3] = { -- Valorous
 				camera = { posX = 4, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi/2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 20,	color = 15807510,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = 8319254,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = 11885769,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 17,	color = 1493233,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 20,	color = 15807510,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = 8319254,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = 11885769,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 17,	color = 1493233,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1866,10 +1866,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 20,	color = 14343983,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = 4492232,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = 14559529,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 17,	color = 3855469,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 20,	color = 14343983,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = 4492232,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = 14559529,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 17,	color = 3855469,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1927,10 +1927,10 @@ rat.AppSwatchData = {
 			[3] = { -- Valorous
 				camera = { posX = 3, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = -.1, facing = math.pi/2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 17,	color = 3466495,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 18,	color = 16398113,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 19,	color = 15066623,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 20,	color = 4186724,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 17,	color = 3466495,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 18,	color = 16398113,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 19,	color = 15066623,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 20,	color = 4186724,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -1986,10 +1986,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 22,	color = 4780859,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 21,	color = 4575473,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 23,	color = 13524967,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 24,	color = 16728085,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 22,	color = 4780859,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 21,	color = 4575473,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 23,	color = 13524967,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 24,	color = 16728085,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -2040,10 +2040,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 17,	color = 2320618,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 19,	color = 10692572,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 20,	color = 16777215,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 18,	color = 3666734,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 17,	color = 2320618,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 19,	color = 10692572,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 20,	color = 16777215,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 18,	color = 3666734,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
@@ -2094,10 +2094,10 @@ rat.AppSwatchData = {
 			},
 			[3] = { -- Valorous
 				tints = {
-					{ modifiedID = 25,	color = 2744738,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {43533}, achievements = {} } },
-					{ modifiedID = 26,	color = 3187001,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {43533}, achievements = {40018} } },
-					{ modifiedID = 27,	color = 10174674,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {43533}, achievements = {11162} } },
-					{ modifiedID = 28,	color = 15584394,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {43533}, achievements = {11163} } },
+					{ modifiedID = 25,	color = 2744738,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
+					{ modifiedID = 26,	color = 3187001,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
+					{ modifiedID = 27,	color = 10174674,	tooltip = L["TraitRow3Tint3Req"],	req = { quests = {}, achievements = {10459, 11162} } },
+					{ modifiedID = 28,	color = 15584394,	tooltip = L["TraitRow3Tint4Req"],	req = { quests = {}, achievements = {10459, 11163} } },
 				},
 			},
 			[4] = { -- War-torn
