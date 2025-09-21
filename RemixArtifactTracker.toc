@@ -3,7 +3,7 @@
 ## Notes: Adds an artifact appearance tab to the artifact weapons for Legion Remix
 ## Author: Keyboardturner
 ## Version: 0.0.1
-## IconTexture: Interface/Icons/ability_dragonriding_glyph01.blp
+## IconTexture: Interface/Icons/inv_glaive_1h_artifactazgalor_d_02dual.blp
 
 ## Title-enUS: Remix Artifact Tracker
 ## Notes-enUS: Adds an artifact appearance tab to the artifact weapons for Legion Remix
