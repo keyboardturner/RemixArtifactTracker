@@ -564,8 +564,8 @@ rat.AppSwatchData = {
 		secondary = 128288,
 		appearances = {
 			[1] = { -- Classic
-				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
-				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
+				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
+				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
 					{ modifiedID = 12,	color = 13256731, 	tooltip = L["TraitRow1Tint1Req"],	req = { quests = {}, achievements = {} } },
 					{ modifiedID = 10,	color = 6542710,	tooltip = L["TraitRow1Tint2Req"],	req = { quests = {43349, 42213, 40890, 42454}, achievements = {}, any = true } },
@@ -574,8 +574,8 @@ rat.AppSwatchData = {
 				},
 			},
 			[2] = { -- Upgraded
-				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
-				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
+				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
+				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
 					{ modifiedID = 16,	color = 10822946,	tooltip = L["TraitRow2Tint1Req"],	req = { quests = {}, achievements = {10746}, charspecific = true } },
 					{ modifiedID = 14,	color = 13153068,	tooltip = L["TraitRow2Tint2Req"],	req = { quests = {}, achievements = {10746}, charspecific = true } },
@@ -584,8 +584,8 @@ rat.AppSwatchData = {
 				},
 			},
 			[3] = { -- Valorous
-				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
-				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
+				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
+				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
 					{ modifiedID = 28,	color = 16314894,	tooltip = L["TraitRow3Tint1Req"],	req = { quests = {}, achievements = {10459} } },
 					{ modifiedID = 26,	color = 2616127,	tooltip = L["TraitRow3Tint2Req"],	req = { quests = {}, achievements = {10459, 40018} } },
@@ -594,8 +594,8 @@ rat.AppSwatchData = {
 				},
 			},
 			[4] = { -- War-torn
-				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
-				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
+				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
+				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
 					{ modifiedID = 18,	color = 4577901,	tooltip = L["TraitRow4Tint1Req"],	req = { quests = {}, achievements = {12894} } },
 					{ modifiedID = 17,	color = 5011930,	tooltip = L["TraitRow4Tint2Req"],	req = { quests = {}, achievements = {12902} } },
@@ -604,8 +604,8 @@ rat.AppSwatchData = {
 				},
 			},
 			[5] = { -- Challenging
-				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
-				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
+				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
+				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
 					{ modifiedID = 29,	color = 15568151,	tooltip = L["TraitRow5Tint1Req_THR"],	req = { quests = {45416}, achievements = {}, charspecific = true, any = true } },
 					{ modifiedID = 30,	color = 3507690,	tooltip = L["TraitRow5Tint2Req_THR"],	req = { quests = {45416}, achievements = {11657, 11658, 11659, 11660}, charspecific = true, any = true } },
@@ -614,8 +614,8 @@ rat.AppSwatchData = {
 				},
 			},
 			[6] = { -- Hidden
-				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
-				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
+				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
+				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
 					{ modifiedID = 23,	color = 15378707,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43681} } },
 					{ modifiedID = 21,	color = 4626147,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true } },
