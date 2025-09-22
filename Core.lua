@@ -523,7 +523,7 @@ SetupCustomPanel = function(frame)
 				return data == frame.attachedItemID;
 			end
 
-			rootDescription:CreateTitle("[PH] Select Artifact")
+			rootDescription:CreateTitle(L["Artifact"])
 
 			local _, classToken = UnitClass("player")
 			local classArtifacts = rat.ClassArtifacts and rat.ClassArtifacts[classToken]
@@ -532,11 +532,12 @@ SetupCustomPanel = function(frame)
 				table.sort(classArtifacts);
 
 				for _, specID in ipairs(classArtifacts) do
-					local itemName = C_Item.GetItemInfo(specID) or ("Item " .. specID);
-					rootDescription:CreateRadio(itemName, IsSelected, SetSelected, specID);
+					local OldWeaponName = rat.AppSwatchData[specID].itemID
+					local itemName = C_Item.GetItemInfo(OldWeaponName) or ("Item " .. OldWeaponName);
+					rootDescription:CreateRadio(itemName, IsSelected, SetSelected, OldWeaponName);
 				end
 			else
-				rootDescription:CreateTitle("[PH] No Artifacts Available");
+				rootDescription:CreateTitle(L["Unavailable"]);
 			end
 		end
 
@@ -544,7 +545,7 @@ SetupCustomPanel = function(frame)
 		local dropdown = CreateFrame("DropdownButton", nil, panel, "WowStyle1DropdownTemplate");
 		dropdown:SetPoint("TOP", forgebg, "TOP", 0, -10);
 		dropdown:SetWidth(300);
-		dropdown:SetDefaultText("Select Artifact");
+		dropdown:SetDefaultText(L["Artifact"]);
 		dropdown:SetupMenu(ArtifactSelector_GenerateMenu);
 		panel.artifactSelectorDropdown = dropdown;
 	end
