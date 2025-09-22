@@ -164,6 +164,7 @@ RefreshSwatches = function(frame)
 	if not specData then return end
 
 	local _, _, playerRaceID = UnitRace("player")
+	local isTimerunner = PlayerGetTimerunningSeasonID() ~= nil
 
 	for i, row in ipairs(panel.swatchRows) do
 		-- check if tint exists
@@ -207,6 +208,11 @@ RefreshSwatches = function(frame)
 			tintsToDisplay = {}
 		end
 
+		local isRowUnobtainable = false
+		if tintsToDisplay[1] and tintsToDisplay[1].unobtainable and tintsToDisplay[1].req and not AreRequirementsMet(tintsToDisplay[1].req) then
+			isRowUnobtainable = true
+		end
+
 
 		for k, swatchButton in ipairs(row) do
 			local tintData = tintsToDisplay[k]
@@ -220,10 +226,21 @@ RefreshSwatches = function(frame)
 				-- tint swatch color
 				swatchButton.swatch:SetVertexColor(UISwatchColorToRGB(tintData.color));
 
+				-- swatch locked
+				local isUnobtainable = isRowUnobtainable or (isTimerunner and tintData.unobtainableRemix)
+				swatchButton.unobtainable:SetShown(isUnobtainable)
+				swatchButton.locked:SetShown(not isUnobtainable and tintData.req and not AreRequirementsMet(tintData.req))
+
 				-- swatch tooltip
 				if tintData.tooltip then
 					swatchButton:SetScript("OnEnter", function(self)
 						GameTooltip:SetOwner(self, "ANCHOR_TOP");
+						if isTimerunner and tintData.unobtainableRemix then
+							GameTooltip_AddErrorLine(GameTooltip, L["Unavailable"]);
+						end
+						if isRowUnobtainable then
+							GameTooltip_AddErrorLine(GameTooltip, L["NoLongerAvailable"]);
+						end
 						GameTooltip_AddNormalLine(GameTooltip, tintData.tooltip);
 						GameTooltip:Show();
 					end)
@@ -232,9 +249,6 @@ RefreshSwatches = function(frame)
 					swatchButton:SetScript("OnEnter", nil);
 					swatchButton:SetScript("OnLeave", nil);
 				end
-
-				-- swatch locked
-				swatchButton.locked:SetShown(tintData.req and not AreRequirementsMet(tintData.req));
 
 				-- transmog collected
 				if specData.itemID and tintData.modifiedID then
@@ -434,10 +448,10 @@ SetupCustomPanel = function(frame)
 	forgeTitle:SetText(WrapTextInColorCode(ARTIFACTS_APPEARANCE_TAB_TITLE, "fff0b837"));
 
 	-- appearance rows and swatches
-	local MaxRows = 6; -- 3 is remix, 6 is mainline
-	if PlayerGetTimerunningSeasonID() then
-		MaxRows = 3;
-	end
+	local MaxRows = 6;
+	--if PlayerGetTimerunningSeasonID() then -- BLIZZORD LETS US COLLECT HIDDEN APPEARANCES
+	--	MaxRows = 3;
+	--end
 	for i = 1, MaxRows do
 		local appstrip = panel:CreateTexture(nil, "ARTWORK", nil, 1);
 		local HeightSpacer = 150;
@@ -486,9 +500,14 @@ SetupCustomPanel = function(frame)
 			apptint.locked:SetAllPoints();
 			apptint.locked:SetAtlas("Forge-Lock");
 			apptint.locked:Hide();
+			apptint.unobtainable = apptint:CreateTexture(nil, "OVERLAY", nil, 6);
+			apptint.unobtainable:SetAllPoints();
+			apptint.unobtainable:SetAtlas("Forge-UnobtainableCover");
+			apptint.unobtainable:Hide();
+			
 
 			-- transmog collected icon
-			apptint.transmogIcon = apptint:CreateTexture(nil, "OVERLAY", nil, 6);
+			apptint.transmogIcon = apptint:CreateTexture(nil, "OVERLAY", nil, 7);
 			apptint.transmogIcon:SetSize(20, 20);
 			apptint.transmogIcon:SetPoint("TOPRIGHT", 5, 5);
 			apptint.transmogIcon:SetAtlas("Crosshair_Transmogrify_32");
@@ -505,7 +524,7 @@ SetupCustomPanel = function(frame)
 					return;
 				end
 				SelectSwatch(self);
-				PlaySound(self.locked:IsShown() and SOUNDKIT.UI_70_ARTIFACT_FORGE_APPEARANCE_LOCKED or SOUNDKIT.UI_70_ARTIFACT_FORGE_APPEARANCE_COLOR_SELECT); -- 54131 or 54130
+				PlaySound((self.locked:IsShown() or self.unobtainable:IsShown()) and SOUNDKIT.UI_70_ARTIFACT_FORGE_APPEARANCE_LOCKED or SOUNDKIT.UI_70_ARTIFACT_FORGE_APPEARANCE_COLOR_SELECT); -- 54131 or 54130
 			end);
 			panel.swatchRows[i][k] = apptint;
 		end

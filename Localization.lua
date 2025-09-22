@@ -36,6 +36,7 @@ if LOCALE == "enUS" then
 	L["RaceGroup4"] = L["RaceWorgen"] .. ", " .. L["RaceKulTiran"]
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
+	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
 
 	L["TraitRow1Temp_Classic"]		 = "Classic"
 	L["TraitRow2Temp_Upgraded"]		 = "Upgraded"
@@ -400,6 +401,7 @@ if LOCALE == "esMX" then
 	L["RaceGroup4"] = L["RaceWorgen"] .. ", " .. L["RaceKulTiran"]
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
+	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
 
 	L["TraitRow1Temp_Classic"]		 = "Clásico"
 	L["TraitRow2Temp_Upgraded"]		 = "Mejorado"
@@ -763,6 +765,7 @@ if LOCALE == "esES" then
 	L["RaceGroup4"] = L["RaceWorgen"] .. ", " .. L["RaceKulTiran"]
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
+	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
 
 	L["TraitRow1Temp_Classic"]		 = "Clásico"
 	L["TraitRow2Temp_Upgraded"]		 = "Mejorado"
@@ -1126,6 +1129,7 @@ if LOCALE == "deDE" then
 	L["RaceGroup4"] = L["RaceWorgen"] .. ", " .. L["RaceKulTiran"]
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
+	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
 
 	L["TraitRow1Temp_Classic"]		 = "Klassisch"
 	L["TraitRow2Temp_Upgraded"]		 = "Verbessert"
@@ -1489,6 +1493,7 @@ if LOCALE == "frFR" then
 	L["RaceGroup4"] = L["RaceWorgen"] .. ", " .. L["RaceKulTiran"]
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
+	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
 
 	L["TraitRow1Temp_Classic"]		 = "Classique"
 	L["TraitRow2Temp_Upgraded"]		 = "Améliorée"
@@ -1852,6 +1857,7 @@ if LOCALE == "itIT" then
 	L["RaceGroup4"] = L["RaceWorgen"] .. ", " .. L["RaceKulTiran"]
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
+	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
 
 	L["TraitRow1Temp_Classic"]		 = "Classico"
 	L["TraitRow2Temp_Upgraded"]		 = "Potenziato"
@@ -2215,6 +2221,7 @@ if LOCALE == "ptBR" then
 	L["RaceGroup4"] = L["RaceWorgen"] .. ", " .. L["RaceKulTiran"]
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
+	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
 
 	L["TraitRow1Temp_Classic"]		 = "Clássico"
 	L["TraitRow2Temp_Upgraded"]		 = "Aprimorado"
@@ -2580,6 +2587,7 @@ if LOCALE == "ruRU" then
 	L["RaceGroup4"] = L["RaceWorgen"] .. ", " .. L["RaceKulTiran"]
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
+	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
 
 	L["TraitRow1Temp_Classic"]		 = "классический вид"
 	L["TraitRow2Temp_Upgraded"]		 = "улучшенный вид"
@@ -2943,6 +2951,7 @@ if LOCALE == "koKR" then
 	L["RaceGroup4"] = L["RaceWorgen"] .. " " .. L["RaceKulTiran"]
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
+	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
 
 	L["TraitRow1Temp_Classic"]		 = "기본"
 	L["TraitRow2Temp_Upgraded"]		 = "강화된"
@@ -3306,6 +3315,7 @@ if LOCALE == "zhCN" then
 	L["RaceGroup4"] = L["RaceWorgen"] .. "， " .. L["RaceKulTiran"]
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
+	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
 
 	L["TraitRow1Temp_Classic"]		 = "经典"
 	L["TraitRow2Temp_Upgraded"]		 = "进阶"
@@ -3669,6 +3679,7 @@ if LOCALE == "zhTW" then
 	L["RaceGroup4"] = L["RaceWorgen"] .. "， " .. L["RaceKulTiran"]
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
+	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
 
 	L["TraitRow1Temp_Classic"]		 = "經典"
 	L["TraitRow2Temp_Upgraded"]		 = "進階"
