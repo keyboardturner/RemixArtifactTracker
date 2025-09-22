@@ -534,7 +534,7 @@ SetupCustomPanel = function(frame)
 				for _, specID in ipairs(classArtifacts) do
 					local OldWeaponName = rat.AppSwatchData[specID].itemID
 					local itemName = C_Item.GetItemInfo(OldWeaponName) or ("Item " .. OldWeaponName);
-					rootDescription:CreateRadio(itemName, IsSelected, SetSelected, OldWeaponName);
+					rootDescription:CreateRadio(itemName, IsSelected, SetSelected, specID);
 				end
 			else
 				rootDescription:CreateTitle(L["Unavailable"]);
