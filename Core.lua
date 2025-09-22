@@ -163,46 +163,85 @@ RefreshSwatches = function(frame)
 	local specData = rat.AppSwatchData[specID]
 	if not specData then return end
 
-	for i, row in ipairs(panel.swatchRows) do
-		for k, swatchButton in ipairs(row) do
-			if swatchButton then
-				local appearanceData = specData.appearances[i]
-				local tintData = appearanceData and appearanceData.tints[k]
+	local _, _, playerRaceID = UnitRace("player")
 
+	for i, row in ipairs(panel.swatchRows) do
+		-- check if tint exists
+		local appearanceData = specData.appearances[i]
+		local tintsToDisplay
+
+		if appearanceData and appearanceData.tints then
+			-- check if racial (druid)
+			local hasRacialTints = false
+			for _, tint in ipairs(appearanceData.tints) do
+				if tint.raceIDs then
+					hasRacialTints = true
+					break
+				end
+			end
+
+			if hasRacialTints then
+				tintsToDisplay = {}
+				-- add the matching racial tint
+				for _, tint in ipairs(appearanceData.tints) do
+					if tint.raceIDs then
+						for _, raceID in ipairs(tint.raceIDs) do
+							if raceID == playerRaceID then
+								table.insert(tintsToDisplay, tint)
+								break -- only add one
+							end
+						end
+					end
+				end
+				-- add all non-racial tints
+				for _, tint in ipairs(appearanceData.tints) do
+					if not tint.raceIDs then
+						table.insert(tintsToDisplay, tint)
+					end
+				end
+			else
+				-- no racial tints, use all of them
+				tintsToDisplay = appearanceData.tints
+			end
+		else
+			tintsToDisplay = {}
+		end
+
+
+		for k, swatchButton in ipairs(row) do
+			local tintData = tintsToDisplay[k]
+
+			swatchButton:SetShown(tintData ~= nil)
+
+			if tintData then
 				-- set the swatch data for the button
 				swatchButton.swatchData = tintData;
 
-				if tintData then
-					-- tint swatch color
-					swatchButton.swatch:SetVertexColor(UISwatchColorToRGB(tintData.color));
+				-- tint swatch color
+				swatchButton.swatch:SetVertexColor(UISwatchColorToRGB(tintData.color));
 
-					-- swatch tooltip
-					if tintData.tooltip then
-						swatchButton:SetScript("OnEnter", function(self)
-							GameTooltip:SetOwner(self, "ANCHOR_TOP");
-							GameTooltip_AddNormalLine(GameTooltip, tintData.tooltip);
-							GameTooltip:Show();
-						end)
-						swatchButton:SetScript("OnLeave", GameTooltip_Hide);
-					else
-						swatchButton:SetScript("OnEnter", nil);
-						swatchButton:SetScript("OnLeave", nil);
-					end
-
-					-- swatch locked
-					swatchButton.locked:SetShown(tintData.req and not AreRequirementsMet(tintData.req));
-
-
-					-- transmog collected
-					if specData.itemID and tintData.modifiedID then
-						local hasTransmog = C_TransmogCollection.PlayerHasTransmog(specData.itemID, tintData.modifiedID)
-						swatchButton.transmogIcon:SetShown(hasTransmog)
-					else
-						swatchButton.transmogIcon:Hide()
-					end
+				-- swatch tooltip
+				if tintData.tooltip then
+					swatchButton:SetScript("OnEnter", function(self)
+						GameTooltip:SetOwner(self, "ANCHOR_TOP");
+						GameTooltip_AddNormalLine(GameTooltip, tintData.tooltip);
+						GameTooltip:Show();
+					end)
+					swatchButton:SetScript("OnLeave", GameTooltip_Hide);
 				else
-					swatchButton.locked:Hide();
-					swatchButton.transmogIcon:Hide();
+					swatchButton:SetScript("OnEnter", nil);
+					swatchButton:SetScript("OnLeave", nil);
+				end
+
+				-- swatch locked
+				swatchButton.locked:SetShown(tintData.req and not AreRequirementsMet(tintData.req));
+
+				-- transmog collected
+				if specData.itemID and tintData.modifiedID then
+					local hasTransmog = C_TransmogCollection.PlayerHasTransmog(specData.itemID, tintData.modifiedID)
+					swatchButton.transmogIcon:SetShown(hasTransmog)
+				else
+					swatchButton.transmogIcon:Hide()
 				end
 			end
 		end

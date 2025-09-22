@@ -3,6 +3,14 @@ rat.L = {}
 local L = rat.L
 
 local ClassName = UnitClass("player")
+local function GetRaceName(raceID)
+	local raceData = C_CreatureInfo.GetRaceInfo(raceID)
+	local raceName
+	if raceData and raceData.raceName then
+		raceName = raceData.raceName
+	end
+	return raceName
+end
 
 local LOCALE = GetLocale()
 
@@ -14,6 +22,19 @@ if LOCALE == "enUS" then
 	L["Appearances"] = ARTIFACTS_APPEARANCE_TAB
 	L["ShowSecondary"] = "Show Secondary"
 	L["ShowSecondaryTT"] = "Display the secondary model tied to this set."
+	L["RaceNightElf"] = GetRaceName(4)
+	L["RaceHaranir"] = GetRaceName(86)
+	L["RaceTauren"] = GetRaceName(6)
+	L["RaceHMTauren"] = GetRaceName(28)
+	L["RaceTroll"] = GetRaceName(8)
+	L["RaceZandalari"] = GetRaceName(31)
+	L["RaceWorgen"] = GetRaceName(22)
+	L["RaceKulTiran"] = GetRaceName(32)
+	L["RaceGroup1"] = L["RaceNightElf"] -- .. ", " .. L["RaceHaranir"] -- (maybe for future?)
+	L["RaceGroup2"] = L["RaceTauren"] .. ", " .. L["RaceHMTauren"]
+	L["RaceGroup3"] = L["RaceTroll"] .. ", " .. L["RaceZandalari"]
+	L["RaceGroup4"] = L["RaceWorgen"] .. ", " .. L["RaceKulTiran"]
+
 	L["TraitRow1Temp_Classic"]		 = "Classic"
 	L["TraitRow2Temp_Upgraded"]		 = "Upgraded"
 	L["TraitRow3Temp_Valorous"]		 = "Valorous"

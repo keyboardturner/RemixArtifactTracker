@@ -367,10 +367,10 @@ rat.AppSwatchData = {
 				secondaryCamera = { posX = 3, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = 3*math.pi / 2, pitch = .75, },
 				animation = 0,
 				tints = {
-					{ displayID = 66779,	modifiedID = 9,		color = 4112989, 	tooltip = L["TraitRow1Tint1Req"].."[PH] Troll, Zandalari Troll",		req = { quests = {}, achievements = {} } },
-					{ displayID = 66777,	modifiedID = 9,		color = 10319436,	tooltip = L["TraitRow1Tint1Req"].."[PH] Highmountain Tauren, Tauren",	req = { quests = {}, achievements = {} } },
-					{ displayID = 66778,	modifiedID = 9,		color = 14274424, 	tooltip = L["TraitRow1Tint1Req"].."[PH] Kul Tiran, Worgen",				req = { quests = {}, achievements = {} } },
-					{ displayID = 66780,	modifiedID = 9,		color = 9321405,	tooltip = L["TraitRow1Tint1Req"].."[PH] Night Elf",						req = { quests = {}, achievements = {} } },
+					{ displayID = 66779,	modifiedID = 9,		color = 4112989, 	tooltip = L["TraitRow1Tint1Req"]..L["RaceGroup3"],	req = { quests = {}, achievements = {} },	raceIDs = {8, 31} }, -- Troll, Zandalari Troll
+					{ displayID = 66777,	modifiedID = 9,		color = 10319436,	tooltip = L["TraitRow1Tint1Req"]..L["RaceGroup2"],	req = { quests = {}, achievements = {} },	raceIDs = {6, 28} }, -- Tauren, HM Tauren
+					{ displayID = 66778,	modifiedID = 9,		color = 14274424, 	tooltip = L["TraitRow1Tint1Req"]..L["RaceGroup4"],	req = { quests = {}, achievements = {} },	raceIDs = {23, 22, 32} }, -- Gilnean, Worgen, Kul Tiran
+					{ displayID = 66780,	modifiedID = 9,		color = 9321405,	tooltip = L["TraitRow1Tint1Req"]..L["RaceGroup1"],	req = { quests = {}, achievements = {} },	raceIDs = {4, 86} }, -- Night Elf, Haranir
 					{ displayID = 66775,	modifiedID = 10,	color = 5052011,	tooltip = L["TraitRow1Tint2Req"],	req = { quests = {43349, 42213, 40890, 42454}, achievements = {}, any = true } },
 					{ displayID = 66776,	modifiedID = 11,	color = 2983883,	tooltip = L["TraitRow1Tint3Req"],	req = { quests = {44153}, achievements = {} } },
 					{ displayID = 66781,	modifiedID = 12,	color = 13822955,	tooltip = L["TraitRow1Tint4Req"],	req = { quests = {42116}, achievements = {} } },
@@ -442,10 +442,10 @@ rat.AppSwatchData = {
 				camera = { posX = 4, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .7, facing = 7*math.pi / 4, pitch = 0, },
 				secondaryCamera = { posX = 3, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi/2, pitch = .75, },
 				tints = {
-					{ displayID = 66686,	modifiedID = 9,		color = 7878111, 	tooltip = L["TraitRow1Tint1Req"].."[PH] Night Elf", req = { quests = {}, achievements = {} } },
-					{ displayID = 66693,	modifiedID = 9,		color = 6233864, 	tooltip = L["TraitRow1Tint1Req"].."[PH] Highmountain Tauren, Tauren", req = { quests = {}, achievements = {} } },
-					{ displayID = 66683,	modifiedID = 9,		color = 4840150, 	tooltip = L["TraitRow1Tint1Req"].."[PH] Troll, Zandalari Troll", req = { quests = {}, achievements = {} } },
-					{ displayID = 66685,	modifiedID = 9,		color = 12137809, 	tooltip = L["TraitRow1Tint1Req"].."[PH] Kul Tiran, Worgen", req = { quests = {}, achievements = {} } },
+					{ displayID = 66686,	modifiedID = 9,		color = 7878111, 	tooltip = L["TraitRow1Tint1Req"]..L["RaceGroup1"],	req = { quests = {}, achievements = {} }, raceIDs = {4, 86} }, -- Night Elf, Haranir
+					{ displayID = 66693,	modifiedID = 9,		color = 6233864, 	tooltip = L["TraitRow1Tint1Req"]..L["RaceGroup2"],	req = { quests = {}, achievements = {} }, raceIDs = {6, 28} }, -- Tauren, HM Tauren
+					{ displayID = 66683,	modifiedID = 9,		color = 4840150, 	tooltip = L["TraitRow1Tint1Req"]..L["RaceGroup3"],	req = { quests = {}, achievements = {} }, raceIDs = {8, 31} }, -- Troll, Zandalari Troll
+					{ displayID = 66685,	modifiedID = 9,		color = 12137809, 	tooltip = L["TraitRow1Tint1Req"]..L["RaceGroup4"],	req = { quests = {}, achievements = {} }, raceIDs = {23, 22, 32} }, -- Gilnean, Worgen, Kul Tiran
 					{ displayID = 66687,	modifiedID = 10,	color = 13541153,	tooltip = L["TraitRow1Tint2Req"],	req = { quests = {43349, 42213, 40890, 42454}, achievements = {}, any = true } },
 					{ displayID = 66688,	modifiedID = 11,	color = 14079702, 	tooltip = L["TraitRow1Tint3Req"],	req = { quests = {44153}, achievements = {} } },
 					{ displayID = 66682,	modifiedID = 12,	color = 1525299,	tooltip = L["TraitRow1Tint4Req"],	req = { quests = {42116}, achievements = {} } },
@@ -2712,4 +2712,4 @@ rat.ClassArtifacts = {
 	}
 };
 
-rat.ClassArtifacts.DEMONHUNTER = rat.ClassArtifacts.DEBUG -- (for testing, do not add to final version)
+rat.ClassArtifacts.WARLOCK = rat.ClassArtifacts.DEBUG -- (for testing, do not add to final version)
