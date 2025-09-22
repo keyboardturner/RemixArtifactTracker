@@ -2670,8 +2670,8 @@ rat.ArtifactAppearanceNames = {
 		background = "Artifacts-MageArcane-BG",
 	},
 	[133755] = {
-		class = "Adventurer"
-		spec = "Fishing"
+		class = "Adventurer",
+		spec = "Fishing",
 		appearances = {
 			[1] = "[PH] Underlight Angler",
 		},
