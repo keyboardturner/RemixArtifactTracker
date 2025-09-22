@@ -2126,6 +2126,20 @@ rat.AppSwatchData = {
 			},
 		},
 	},
+
+	-- Fishing
+	[133755] = {
+		itemID = 133755,
+		appearances = {
+			[1] = {
+				tints = {
+					{ modifiedID = 9,	color = 16714752, 	tooltip = "[PH] Fishes",	req = { quests = {}, achievements = {} } },
+					{ modifiedID = 10,	color = 2088470,	tooltip = "[PH] Complete the achievement, \"Fisherfriend of the Isles.\"",	req = { quests = {48546}, achievements = {} } },
+					{ modifiedID = 11,	color = 3361410, 	tooltip = "[PH] Complete the achievement, \"Fisherfriend of the Isles.\"",	req = { quests = {48546}, achievements = {} } },
+				},
+			},
+		},
+	},
 };
 
 -- artifact appearance row names
@@ -2655,6 +2669,15 @@ rat.ArtifactAppearanceNames = {
 		icon = "Artifacts-MageArcane-BG-rune",
 		background = "Artifacts-MageArcane-BG",
 	},
+	[133755] = {
+		class = "Adventurer"
+		spec = "Fishing"
+		appearances = {
+			[1] = "[PH] Underlight Angler",
+		},
+		icon = "Mobile-Fishing",
+		background = "Professions-Specializations-Background-Fishing",
+	},
 };
 
 rat.ClassArtifacts = {
@@ -2670,6 +2693,7 @@ rat.ClassArtifacts = {
 	["MONK"]		 = { 242596, 242595, 242597 },
 	["DRUID"]		 = { 242578, 242580, 242569, 242561 },
 	["DEMONHUNTER"]	 = { 242556, 242577 },
+	["Adventurer"]	 = { 133755 }, -- Fishing
 
 	["DEBUG"]		 = { -- debug, includes all above IDs
 		236772, 237746, 237749,
@@ -2684,7 +2708,8 @@ rat.ClassArtifacts = {
 		242596, 242595, 242597,
 		242578, 242580, 242569, 242561,
 		242556, 242577,
+		133755,
 	}
 };
 
-rat.ClassArtifacts.WARLOCK = rat.ClassArtifacts.DEBUG -- (for testing, do not add to final version)
+rat.ClassArtifacts.DEMONHUNTER = rat.ClassArtifacts.DEBUG -- (for testing, do not add to final version)

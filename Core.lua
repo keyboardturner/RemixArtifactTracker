@@ -454,7 +454,7 @@ SetupCustomPanel = function(frame)
 			apptint.transmogIcon:SetPoint("TOPRIGHT", 5, 5);
 			apptint.transmogIcon:SetAtlas("Crosshair_Transmogrify_32");
 			apptint.transmogIcon:SetScript("OnEnter", function(self)
-				GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+				GameTooltip:SetOwner(self, "ANCHOR_TOP");
 				GameTooltip:SetText(TRANSMOGRIFY_TOOLTIP_APPEARANCE_KNOWN);
 				GameTooltip:Show();
 			end);
