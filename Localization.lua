@@ -17,6 +17,9 @@ local LOCALE = GetLocale()
 if LOCALE == "enUS" then
 	L["Addon_Title"] = "Remix Artifact Tracker"
 	L["Addon_Notes"] = "Adds an artifact appearance tab to the artifact weapons for Legion Remix"
+	L["SlashCmd1"] = "/rat"
+	L["SlashCmd2"] = "/rat"
+	L["SlashCmd3"] = "/remixartifact"
 
 	L["Traits"] = ARTIFACTS_PERK_TAB
 	L["Appearances"] = ARTIFACTS_APPEARANCE_TAB
@@ -382,6 +385,9 @@ if LOCALE == "esMX" then
 	-- MXSpanish translations go here
 	L["Addon_Title"] = "Remix Artifact Tracker"
 	L["Addon_Notes"] = "Agrega una pestaña de apariencias de artefacto a las armas de artefacto en Legión Remix."
+	L["SlashCmd1"] = "/rat"
+	L["SlashCmd2"] = "/rat"
+	L["SlashCmd3"] = "/remixartifact"
 
 	L["Traits"] = ARTIFACTS_PERK_TAB
 	L["Appearances"] = ARTIFACTS_APPEARANCE_TAB
@@ -746,6 +752,9 @@ if LOCALE == "esES" then
 	-- EUSpanish translations go here
 	L["Addon_Title"] = "Remix Artifact Tracker"
 	L["Addon_Notes"] = "Agrega una pestaña de apariencias de artefacto a las armas de artefacto en Legión Remix."
+	L["SlashCmd1"] = "/rat"
+	L["SlashCmd2"] = "/rat"
+	L["SlashCmd3"] = "/remixartifact"
 
 	L["Traits"] = ARTIFACTS_PERK_TAB
 	L["Appearances"] = ARTIFACTS_APPEARANCE_TAB
@@ -1110,6 +1119,9 @@ if LOCALE == "deDE" then
 	-- German translations go here
 	L["Addon_Title"] = "Remix Artifact Tracker"
 	L["Addon_Notes"] = "Fügt den Artefaktwaffen in Legion Remix einen Reiter für Artefaktvorlagen hinzu."
+	L["SlashCmd1"] = "/rat"
+	L["SlashCmd2"] = "/rat"
+	L["SlashCmd3"] = "/remixartifact"
 
 	L["Traits"] = ARTIFACTS_PERK_TAB
 	L["Appearances"] = ARTIFACTS_APPEARANCE_TAB
@@ -1474,6 +1486,9 @@ if LOCALE == "frFR" then
 	-- French translations go here
 	L["Addon_Title"] = "Remix Artifact Tracker"
 	L["Addon_Notes"] = "Ajoute un onglet d’apparences d’artefact aux armes prodigieuses dans Legion Remix."
+	L["SlashCmd1"] = "/rat"
+	L["SlashCmd2"] = "/rat"
+	L["SlashCmd3"] = "/remixartifact"
 
 	L["Traits"] = ARTIFACTS_PERK_TAB
 	L["Appearances"] = ARTIFACTS_APPEARANCE_TAB
@@ -1838,6 +1853,9 @@ if LOCALE == "itIT" then
 	-- French translations go here
 	L["Addon_Title"] = "Remix Artifact Tracker"
 	L["Addon_Notes"] = "Aggiunge una scheda delle apparenze degli artefatti alle armi degli artefatti in Legion Remix."
+	L["SlashCmd1"] = "/rat"
+	L["SlashCmd2"] = "/rat"
+	L["SlashCmd3"] = "/remixartifact"
 
 	L["Traits"] = ARTIFACTS_PERK_TAB
 	L["Appearances"] = ARTIFACTS_APPEARANCE_TAB
@@ -2202,6 +2220,9 @@ if LOCALE == "ptBR" then
 	-- Brazilian Portuguese translations go here
 	L["Addon_Title"] = "Remix Artifact Tracker"
 	L["Addon_Notes"] = "Adiciona uma aba de aparências de artefato às armas de artefato no Legion Remix."
+	L["SlashCmd1"] = "/rat"
+	L["SlashCmd2"] = "/rat"
+	L["SlashCmd3"] = "/remixartifact"
 
 	L["Traits"] = ARTIFACTS_PERK_TAB
 	L["Appearances"] = ARTIFACTS_APPEARANCE_TAB
@@ -2568,6 +2589,9 @@ if LOCALE == "ruRU" then
 	-- Russian translations go here
 	L["Addon_Title"] = "Remix Artifact Tracker"
 	L["Addon_Notes"] = "Добавляет вкладку обликов артефактов к артефактному оружию в Legion Remix."
+	L["SlashCmd1"] = "/rat"
+	L["SlashCmd2"] = "/рсат"
+	L["SlashCmd3"] = "/remixartifact"
 
 	L["Traits"] = ARTIFACTS_PERK_TAB
 	L["Appearances"] = ARTIFACTS_APPEARANCE_TAB
@@ -2932,6 +2956,9 @@ if LOCALE == "koKR" then
 	-- Korean translations go here
 	L["Addon_Title"] = "Remix Artifact Tracker"
 	L["Addon_Notes"] = "군단 리믹스의 유물 무기에 유물 형상 탭을 추가합니다."
+	L["SlashCmd1"] = "/rat"
+	L["SlashCmd2"] = "/레믹스유물"
+	L["SlashCmd3"] = "/remixartifact"
 
 	L["Traits"] = ARTIFACTS_PERK_TAB
 	L["Appearances"] = ARTIFACTS_APPEARANCE_TAB
@@ -3296,6 +3323,9 @@ if LOCALE == "zhCN" then
 	-- Simplified Chinese translations go here
 	L["Addon_Title"] = "Remix Artifact Tracker"
 	L["Addon_Notes"] = "为军团重混的神器武器添加一个神器外观标签页。"
+	L["SlashCmd1"] = "/rat"
+	L["SlashCmd2"] = "/混搭神器"
+	L["SlashCmd3"] = "/remixartifact"
 
 	L["Traits"] = ARTIFACTS_PERK_TAB
 	L["Appearances"] = ARTIFACTS_APPEARANCE_TAB
@@ -3660,6 +3690,9 @@ if LOCALE == "zhTW" then
 	-- Traditional Chinese translations go here
 	L["Addon_Title"] = "Remix Artifact Tracker"
 	L["Addon_Notes"] = "為軍團重混的神器武器新增一個神器外觀分頁。"
+	L["SlashCmd1"] = "/rat"
+	L["SlashCmd2"] = "/混搭神器"
+	L["SlashCmd3"] = "/remixartifact"
 
 	L["Traits"] = ARTIFACTS_PERK_TAB
 	L["Appearances"] = ARTIFACTS_APPEARANCE_TAB

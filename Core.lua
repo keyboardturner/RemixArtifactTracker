@@ -41,9 +41,13 @@ local function ToggleStandaloneFrame()
 		end
 	end
 end
-
-SLASH_REMIXARTIFACTTRACKER1 = "/rat";
-SlashCmdList["REMIXARTIFACTTRACKER"] = ToggleStandaloneFrame;
+local function RAT_SlashHandler(msg)
+	ToggleStandaloneFrame();
+end
+SLASH_REMIXARTIFACTTRACKER1 = L["SlashCmd1"];
+SLASH_REMIXARTIFACTTRACKER2 = L["SlashCmd2"];
+SLASH_REMIXARTIFACTTRACKER3 = L["SlashCmd3"];
+SlashCmdList["REMIXARTIFACTTRACKER"] = RAT_SlashHandler;
 
 local function SetModelCamera(modelFrame, cameraData)
 	modelFrame.lastCamera = cameraData;
