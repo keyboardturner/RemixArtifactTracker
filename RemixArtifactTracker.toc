@@ -1,32 +1,37 @@
 ## Interface: 110205
 ## Title: Remix Artifact Tracker
-## Notes: Adds an artifact appearance tab to the artifact weapons for Legion Remix
+## Notes: Adds a way to track artifact appearances from anywhere in the game
 ## Author: Keyboardturner
-## Version: 0.0.1
+## Version: @project-version@
 ## IconTexture: Interface/Icons/inv_glaive_1h_artifactazgalor_d_02dual.blp
 
+## X-Curse-Project-ID: 1350667
+## X-Wago-ID: n6VPz8Gd
+## X-WoWI-ID: 26971
+
 ## Title-enUS: Remix Artifact Tracker
-## Notes-enUS: Adds an artifact appearance tab to the artifact weapons for Legion Remix
+## Notes-enUS: Adds a way to track artifact appearances from anywhere in the game
 ## Title-esMX: Remix Artifact Tracker
-## Notes-esMX: Agrega una pestaña de apariencias de artefacto a las armas de artefacto en Legión Remix
+## Notes-esMX: Añade una forma de seguir las apariencias de artefactos desde cualquier lugar del juego.
 ## Title-esES: Remix Artifact Tracker
-## Notes-esES: Agrega una pestaña de apariencias de artefacto a las armas de artefacto en Legión Remix
+## Notes-esES: Añade una forma de seguir las apariencias de artefactos desde cualquier lugar del juego.
 ## Title-frFR: Remix Artifact Tracker
-## Notes-frFR: Ajoute un onglet d’apparences d’artefact aux armes prodigieuses dans Legion Remix
+## Notes-frFR: Ajoute un moyen de suivre les apparences d’artefacts depuis n’importe où dans le jeu.
 ## Title-deDE: Remix Artifact Tracker"
-## Notes-deDE: Fügt den Artefaktwaffen in Legion Remix einen Reiter für Artefaktvorlagen hinzu."
+## Notes-deDE: Fügt eine Möglichkeit hinzu, Artefaktvorlagen von überall im Spiel zu verfolgen.
 ## Title-itIT: Remix Artifact Tracker
-## Notes-itIT: Aggiunge una scheda delle apparenze degli artefatti alle armi degli artefatti in Legion Remix
+## Notes-itIT: Aggiunge un modo per tenere traccia delle apparenze degli artefatti da qualsiasi punto del gioco.
 ## Title-ptBR: Remix Artifact Tracker
-## Notes-ptBR: Adiciona uma aba de aparências de artefato às armas de artefato no Legion Remix
+## Notes-ptBR: Adiciona uma forma de acompanhar as aparências de artefatos de qualquer lugar do jogo.
 ## Title-ruRU: Remix Artifact Tracker
-## Notes-ruRU: Добавляет вкладку обликов артефактов к артефактному оружию в Legion Remix
+## Notes-ruRU: Добавляет возможность отслеживать внешности артефактов из любой точки игры.
 ## Title-koKR: Remix Artifact Tracker
-## Notes-koKR: 군단 리믹스의 유물 무기에 유물 형상 탭을 추가합니다
+## Notes-koKR: 게임 내 어디서든 유물 형상을 추적할 수 있는 기능을 추가합니다.
 ## Title-zhCN: Remix Artifact Tracker
-## Notes-zhCN: 为军团重混的神器武器添加一个神器外观标签页
+## Notes-zhCN: 添加了一种可以在游戏内任何地方追踪神器外观的方式。
 ## Title-zhTW: Remix Artifact Tracker
-## Notes-zhTW: 為軍團重混的神器武器新增一個神器外觀分頁
+## Notes-zhTW: 新增可在遊戲中任意地點追蹤神器外觀的功能。
+
 ## Category-enUS: Collections
 ## Category-deDE: Kriegsmeutesammlungen
 ## Category-esES: Colecciones de banda guerrera
