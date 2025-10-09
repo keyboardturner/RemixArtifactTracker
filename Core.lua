@@ -573,3 +573,67 @@ SetupCustomPanel = function(frame)
 		panel.artifactSelectorDropdown = dropdown;
 	end
 end
+	
+-- Tabs stuff
+local function SelectRemixTab(tabID)
+	PanelTemplates_SetTab(RemixArtifactFrame, tabID*2)
+
+	if tabID == 1 then -- traits
+		if RemixStandaloneFrame and RemixStandaloneFrame:IsShown() then
+			RemixStandaloneFrame:Hide()
+		end
+	elseif tabID == 2 then -- appearances
+		if not RemixStandaloneFrame then
+			ToggleStandaloneFrame()
+		end
+
+		RemixStandaloneFrame:ClearAllPoints()
+		RemixStandaloneFrame:SetPoint("CENTER", RemixArtifactFrame, "CENTER")
+		RemixStandaloneFrame:Show()
+	end
+end
+
+local function SetupRemixTabs()
+	if not RemixArtifactFrame or RemixArtifactFrame.numTabs then
+		return
+	end
+
+	RemixArtifactFrame.Tabs = {}
+    local frameName = RemixArtifactFrame:GetName()
+
+    -- traits
+	local tab1 = CreateFrame("Button", frameName.."Tab1", RemixArtifactFrame, "PanelTabButtonTemplate")
+	tab1:SetID(1)
+	tab1:SetText(L["Traits"])
+	tab1:SetPoint("TOPLEFT", RemixArtifactFrame, "BOTTOMLEFT", 20, 2)
+	tab1:SetScript("OnClick", function(self) SelectRemixTab(self:GetID()) end)
+	table.insert(RemixArtifactFrame.Tabs, tab1)
+
+	-- appearances
+	local tab2 = CreateFrame("Button", frameName.."Tab2", RemixArtifactFrame, "PanelTabButtonTemplate")
+	tab2:SetID(2)
+	tab2:SetText(L["Appearances"])
+	tab2:SetPoint("TOPLEFT", tab1, "TOPRIGHT", 3, 0)
+	tab2:SetScript("OnClick", function(self) SelectRemixTab(self:GetID()) end)
+	table.insert(RemixArtifactFrame.Tabs, tab2)
+
+	RemixArtifactFrame.numTabs = #RemixArtifactFrame.Tabs
+
+	PanelTemplates_TabResize(tab1)
+	PanelTemplates_TabResize(tab2)
+
+	RemixArtifactFrame:HookScript("OnHide", function()
+		if RemixStandaloneFrame and RemixStandaloneFrame:IsShown() then
+			RemixStandaloneFrame:Hide()
+		end
+	end)
+	
+	SelectRemixTab(1)
+end
+
+local function OnSetTreeID(eventName)
+	SetupRemixTabs()
+	SelectRemixTab(1)
+end
+
+EventRegistry:RegisterCallback("RemixArtifactFrame.SetTreeID", OnSetTreeID)
