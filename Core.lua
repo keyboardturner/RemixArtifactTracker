@@ -1,20 +1,50 @@
 local _, rat = ...
 local L = rat.L
 
-local RefreshPanel, SelectSwatch, RefreshSwatches, SetupCustomPanel
+local RefreshPanel, SelectSwatch, RefreshSwatches, SetupCustomPanel, SelectRemixTab
 
 local RemixStandaloneFrame
+
+local function RATFrame_OnShow()
+	if RemixArtifactFrame then
+		if RemixArtifactFrame.Model then
+			RemixArtifactFrame.Model:SetAlpha(0)
+		end
+		if RemixArtifactFrame.Model then
+			RemixArtifactFrame.AltModel:SetAlpha(0)
+		end
+	end
+	if RemixStandaloneFrame and RemixStandaloneFrame:GetParent() == UIParent then
+		PlaySound(SOUNDKIT.UI_CLASS_TALENT_OPEN_WINDOW);
+	end
+end
+local function RATFrame_OnHide()
+	if RemixArtifactFrame then
+		if RemixArtifactFrame.Model then
+			RemixArtifactFrame.Model:SetAlpha(1)
+		end
+		if RemixArtifactFrame.Model then
+			RemixArtifactFrame.AltModel:SetAlpha(1)
+		end
+	end
+	if RemixStandaloneFrame and RemixStandaloneFrame:GetParent() == UIParent then
+		PlaySound(SOUNDKIT.UI_CLASS_TALENT_CLOSE_WINDOW);
+	end
+end
+
 local function ToggleStandaloneFrame()
 	if not RemixStandaloneFrame then
-		RemixStandaloneFrame = CreateFrame("Frame", "RemixStandaloneFrame", UIParent)
-		RemixStandaloneFrame:SetSize(1630, 895)
-		RemixStandaloneFrame:SetPoint("CENTER")
+		RemixStandaloneFrame = CreateFrame("Frame", "RAT_RemixStandaloneFrame", UIParent)
+		RemixStandaloneFrame:SetSize(1618, 883)
+		RemixStandaloneFrame:SetPoint("TOP", 0, -116)
 		RemixStandaloneFrame:SetToplevel(true)
-		RemixStandaloneFrame:SetMovable(true)
+		--RemixStandaloneFrame:SetMovable(true)
 		RemixStandaloneFrame:EnableMouse(true)
-		RemixStandaloneFrame:RegisterForDrag("LeftButton")
-		RemixStandaloneFrame:SetScript("OnDragStart", RemixStandaloneFrame.StartMoving)
-		RemixStandaloneFrame:SetScript("OnDragStop", RemixStandaloneFrame.StopMovingOrSizing)
+
+		tinsert(UISpecialFrames, RemixStandaloneFrame:GetName())
+		--RemixStandaloneFrame:RegisterForDrag("LeftButton")
+		--RemixStandaloneFrame:SetScript("OnDragStart", RemixStandaloneFrame.StartMoving)
+		--RemixStandaloneFrame:SetScript("OnDragStop", RemixStandaloneFrame.StopMovingOrSizing)
 
 		RemixStandaloneFrame.tex = RemixStandaloneFrame:CreateTexture()
 		RemixStandaloneFrame.tex:SetAllPoints()
@@ -41,8 +71,22 @@ local function ToggleStandaloneFrame()
 		end
 	end
 end
+
 local function RAT_SlashHandler(msg)
-	ToggleStandaloneFrame();
+		-- if the main artifact frame is open, treat the slash command as a shortcut to the appearance tab
+	if RemixArtifactFrame and RemixArtifactFrame:IsShown() then
+		SelectRemixTab(2)
+	else
+		-- if the main artifact frame is closed, use the standalone frame
+		if RemixStandaloneFrame and RemixStandaloneFrame:GetParent() ~= UIParent then
+			RemixStandaloneFrame:SetParent(UIParent)
+			RemixStandaloneFrame:ClearAllPoints()
+			RemixStandaloneFrame:SetPoint("TOP", 0, -116)
+			RemixStandaloneFrame:SetSize(1618, 883) -- re-apply size for standalone mode
+		end
+
+		ToggleStandaloneFrame()
+	end
 end
 SLASH_REMIXARTIFACTTRACKER1 = L["SlashCmd1"];
 SLASH_REMIXARTIFACTTRACKER2 = L["SlashCmd2"];
@@ -268,7 +312,15 @@ end
 
 -- combined refresh function for panel, including swatches
 RefreshPanel = function(frame)
-	if not frame or not frame.customPanel or not frame.attachedItemID then return end
+	if not frame or not frame.customPanel then return end
+
+	-- sync with the main RemixArtifactFrame if not manually overridden by the dropdown
+	if not frame.isOverridden and RemixArtifactFrame and RemixArtifactFrame.attachedItemID then
+		frame.attachedItemID = RemixArtifactFrame.attachedItemID
+	end
+	
+	if not frame.attachedItemID then return end
+	
 	local panel = frame.customPanel
 	local specID = frame.attachedItemID
 	local specData = rat.AppSwatchData[specID]
@@ -310,15 +362,22 @@ end
 SetupCustomPanel = function(frame)
 	if frame.customPanel then return end
 	local panel = CreateFrame("Frame", nil, frame);
+
+	panel:SetScript("OnShow", RATFrame_OnShow);
+	panel:SetScript("OnHide", RATFrame_OnHide);
+
 	panel:SetAllPoints(true);
 	panel:Hide();
 	frame.customPanel = panel
 
 	if frame == RemixStandaloneFrame then
 		local closeButton = CreateFrame("Button", nil, panel, "UIPanelCloseButtonNoScripts");
-		closeButton:SetPoint("TOPRIGHT", -10, -10);
+		closeButton:SetPoint("TOPRIGHT", -8, -10);
 		closeButton:SetScript("OnClick", function()
 			frame:Hide();
+			if RemixArtifactFrame then
+				RemixArtifactFrame:Hide();
+			end
 		end);
 	end
 
@@ -539,6 +598,8 @@ SetupCustomPanel = function(frame)
 		local function ArtifactSelector_GenerateMenu(_, rootDescription)
 			local function SetSelected(data)
 				frame.attachedItemID = data;
+				-- set the override flag to true when user manually selects from dropdown
+				frame.isOverridden = true;
 				RefreshPanel(frame);
 			end
 
@@ -575,20 +636,29 @@ SetupCustomPanel = function(frame)
 end
 	
 -- Tabs stuff
-local function SelectRemixTab(tabID)
+SelectRemixTab = function(tabID)
 	PanelTemplates_SetTab(RemixArtifactFrame, tabID*2)
+	PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
 
 	if tabID == 1 then -- traits
 		if RemixStandaloneFrame and RemixStandaloneFrame:IsShown() then
 			RemixStandaloneFrame:Hide()
+			RemixArtifactFrame:SetToplevel(true)
 		end
 	elseif tabID == 2 then -- appearances
 		if not RemixStandaloneFrame then
 			ToggleStandaloneFrame()
 		end
+		if not RemixArtifactFrame then return end
 
 		RemixStandaloneFrame:ClearAllPoints()
-		RemixStandaloneFrame:SetPoint("CENTER", RemixArtifactFrame, "CENTER")
+		RemixStandaloneFrame:SetParent(RemixArtifactFrame)
+		RemixStandaloneFrame:SetPoint("TOPLEFT", RemixArtifactFrame, "TOPLEFT")
+		RemixStandaloneFrame:SetPoint("BOTTOMRIGHT", RemixArtifactFrame, "BOTTOMRIGHT")
+		RemixArtifactFrame:SetToplevel(false)
+		if RemixArtifactFrame.BorderContainer then
+			RemixStandaloneFrame:SetFrameLevel(RemixArtifactFrame.BorderContainer:GetFrameLevel()+1)
+		end
 		RemixStandaloneFrame:Show()
 	end
 end
@@ -631,9 +701,21 @@ local function SetupRemixTabs()
 	SelectRemixTab(1)
 end
 
-local function OnSetTreeID(eventName)
+local function OnSetTreeID()
 	SetupRemixTabs()
 	SelectRemixTab(1)
 end
 
+-- This function handles live updates when the artifact is changed in the main Remix frame.
+local function OnArtifactTreeChanged()
+	if RemixStandaloneFrame then
+		-- An external change occurred, so we must disable the dropdown's override.
+		RemixStandaloneFrame.isOverridden = false;
+		-- Refresh the panel to sync with the new attachedItemID.
+		RefreshPanel(RemixStandaloneFrame);
+	end
+end
+
 EventRegistry:RegisterCallback("RemixArtifactFrame.SetTreeID", OnSetTreeID)
+-- Register our new callback to listen for changes.
+EventRegistry:RegisterCallback("RemixArtifactFrame.SetTreeID", OnArtifactTreeChanged)
