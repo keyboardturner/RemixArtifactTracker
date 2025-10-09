@@ -2818,6 +2818,7 @@ rat.ClassArtifacts = {
 	["MONK"]		 = { 242596, 242595, 242597 },
 	["DRUID"]		 = { 242578, 242580, 242569, 242561 },
 	["DEMONHUNTER"]	 = { 242556, 242577 },
+	["EVOKER"]		 = { 133755 },
 	["Adventurer"]	 = { 133755 }, -- Fishing
 
 	["DEBUG"]		 = { -- debug, includes all above IDs
@@ -2837,4 +2838,4 @@ rat.ClassArtifacts = {
 	}
 };
 
-rat.ClassArtifacts.ROGUE = rat.ClassArtifacts.DEBUG -- (for testing, do not add to final version)
+--rat.ClassArtifacts.ROGUE = rat.ClassArtifacts.DEBUG -- (for testing, do not add to final version)
