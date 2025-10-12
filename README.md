@@ -8,7 +8,9 @@ The current available artifact appearances in Legion remix include:
 
 Other appearances in Remix are currently unavailable to progress toward - however, many you can unlock via your warband achievements, such as the PvP appearances.
 
-A chat command to open the frame can be accessed via either of these slash commands:
+Other features include Hidden Artifact progress tracking, and an indicator to relog if the player has a tint unlocked but does not have it collected as transmog. The addon additionally makes itself accessible via added tabs when you open the remix artifact trait frame.
+
+A chat command to open a standalone frame can be accessed via either of these slash commands:
 - /rat
 - /remixartifact
 
