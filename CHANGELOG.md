@@ -1,3 +1,12 @@
+# 0.0.4
+
+quick fix to false desaturated transmog icon on unobtainable tints (oops)
+
+properly re-instated these glorious manual changelogs instead of the auto-generated ones
+
+Potentially fixed the item name not displaying upon first opening of panel
+
+
 # 0.0.3
 
 Added functionality to track hidden artifact appearances in the swatch tint color tooltip (ie 30 dungeons, 200 world quests, 1000 enemy player kills)

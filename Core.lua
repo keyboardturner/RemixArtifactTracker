@@ -350,7 +350,7 @@ RefreshSwatches = function(frame)
 						-- appearance is learned
 						swatchButton.transmogIcon:SetDesaturated(false)
 						swatchButton.transmogIcon:Show()
-					elseif not swatchButton.locked:IsShown() then
+					elseif not swatchButton.locked:IsShown() and not swatchButton.unobtainable:IsShown() then -- otherwise tons of false icons
 						-- tint is unlocked, but not collected
 						swatchButton.transmogIcon:SetDesaturated(true) -- trigger "requires relog" tooltip
 						swatchButton.transmogIcon:Show()
@@ -361,7 +361,6 @@ RefreshSwatches = function(frame)
 				else
 					swatchButton.transmogIcon:Hide()
 				end
-				--- END: Modified Transmog Icon Logic ---
 			end
 		end
 	end
@@ -625,7 +624,7 @@ SetupCustomPanel = function(frame)
 			apptint.unobtainable:SetAtlas("Forge-UnobtainableCover");
 			apptint.unobtainable:Hide();
 			
-			
+
 			-- transmog collected icon
 			apptint.transmogIcon = apptint:CreateTexture(nil, "OVERLAY", nil, 7);
 			apptint.transmogIcon:SetSize(20, 20);
@@ -678,7 +677,7 @@ SetupCustomPanel = function(frame)
 
 				for _, specID in ipairs(classArtifacts) do
 					local OldWeaponName = rat.AppSwatchData[specID].itemID
-					local itemName = C_Item.GetItemInfo(OldWeaponName) or ("Item " .. OldWeaponName);
+					local itemName = C_Item.GetItemNameByID(OldWeaponName) or ("Item " .. OldWeaponName);
 					rootDescription:CreateRadio(itemName, IsSelected, SetSelected, specID);
 				end
 			else
@@ -693,6 +692,24 @@ SetupCustomPanel = function(frame)
 		dropdown:SetDefaultText(L["Artifact"]);
 		dropdown:SetupMenu(ArtifactSelector_GenerateMenu);
 		panel.artifactSelectorDropdown = dropdown;
+		
+		-- update the dropdown text once the item name is loaded from the server
+		if not panel.itemInfoListener then
+			local listener = CreateFrame("Frame")
+			listener:RegisterEvent("GET_ITEM_INFO_RECEIVED")
+			listener:SetScript("OnEvent", function(self, event, itemID)
+				if not dropdown or not frame.attachedItemID then return end
+
+				local currentArtifactData = rat.AppSwatchData[frame.attachedItemID]
+				if currentArtifactData and currentArtifactData.itemID == itemID then
+					local itemName = C_Item.GetItemNameByID(itemID)
+					if itemName then
+						dropdown:SetText(itemName)
+					end
+				end
+			end)
+			panel.itemInfoListener = listener
+		end
 	end
 end
 	

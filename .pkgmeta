@@ -13,3 +13,7 @@ ignore:
   - Libs/*/tests
   - Libs/*/.pkgmeta
   - README.md
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
