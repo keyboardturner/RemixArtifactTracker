@@ -1,3 +1,9 @@
+# 0.0.3
+
+Added functionality to track hidden artifact appearances in the swatch tint color tooltip (ie 30 dungeons, 200 world quests, 1000 enemy player kills)
+
+A desaturated transmog icon will appear on tints which are collected but the transmog is not learned. This will indicate a tooltip that states a relog is required for it to take effect (learn the transmog)
+
 # 0.0.2
 
 Added in a tab to the Remix Artifact Frame UI to access the appearances

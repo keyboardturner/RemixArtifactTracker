@@ -147,6 +147,20 @@ local function AreRequirementsMet(req)
 	return true;
 end
 
+local function GetAchievementProgress(achievementID)
+	local currentProgress, requiredProgress = 0, 0
+	local numCriteria = GetAchievementNumCriteria(achievementID)
+	if numCriteria == 0 then return nil, nil end
+
+	for i = 1, numCriteria do
+		local _, _, _, quantity, totalQuantity = GetAchievementCriteriaInfo(achievementID, i)
+		currentProgress = currentProgress + quantity
+		requiredProgress = totalQuantity
+	end
+
+	return currentProgress, requiredProgress
+end
+
 function UISwatchColorToRGB(colorInt)
 	if not colorInt then
 		return 1, 1, 1;
@@ -213,6 +227,12 @@ RefreshSwatches = function(frame)
 
 	local _, _, playerRaceID = UnitRace("player")
 	local isTimerunner = PlayerGetTimerunningSeasonID() ~= nil
+	
+	local trackableAchievements = {
+		[11152] = true, -- Dungeons
+		[11153] = true, -- World Quests
+		[11154] = true, -- Player Kills
+	}
 
 	for i, row in ipairs(panel.swatchRows) do
 		-- check if tint exists
@@ -290,6 +310,30 @@ RefreshSwatches = function(frame)
 							GameTooltip_AddErrorLine(GameTooltip, L["NoLongerAvailable"]);
 						end
 						GameTooltip_AddNormalLine(GameTooltip, tintData.tooltip);
+
+						-- hidden artifact progress
+						if tintData.req and tintData.req.achievements then
+							local achID = tintData.req.achievements[1]
+							if achID and trackableAchievements[achID] then
+								-- check if the base appearance has been unlocked
+								local baseTintUnlocked = false
+								if tintsToDisplay[1] and tintsToDisplay[1].req then
+									baseTintUnlocked = AreRequirementsMet(tintsToDisplay[1].req)
+								else
+									baseTintUnlocked = true
+								end
+								
+								if baseTintUnlocked then
+									local current, total = GetAchievementProgress(achID)
+									if current and total then
+										local progressText = string.format("\n(%d / %d)", current, total)
+										GameTooltip:AddLine(progressText)
+										GameTooltip:Show() -- refresh the tooltip to show the new line
+									end
+								end
+							end
+						end
+
 						GameTooltip:Show();
 					end)
 					swatchButton:SetScript("OnLeave", GameTooltip_Hide);
@@ -301,10 +345,23 @@ RefreshSwatches = function(frame)
 				-- transmog collected
 				if specData.itemID and tintData.modifiedID then
 					local hasTransmog = C_TransmogCollection.PlayerHasTransmog(specData.itemID, tintData.modifiedID)
-					swatchButton.transmogIcon:SetShown(hasTransmog)
+					
+					if hasTransmog then
+						-- appearance is learned
+						swatchButton.transmogIcon:SetDesaturated(false)
+						swatchButton.transmogIcon:Show()
+					elseif not swatchButton.locked:IsShown() then
+						-- tint is unlocked, but not collected
+						swatchButton.transmogIcon:SetDesaturated(true) -- trigger "requires relog" tooltip
+						swatchButton.transmogIcon:Show()
+					else
+						-- not unlocked and not collected
+						swatchButton.transmogIcon:Hide()
+					end
 				else
 					swatchButton.transmogIcon:Hide()
 				end
+				--- END: Modified Transmog Icon Logic ---
 			end
 		end
 	end
@@ -568,7 +625,7 @@ SetupCustomPanel = function(frame)
 			apptint.unobtainable:SetAtlas("Forge-UnobtainableCover");
 			apptint.unobtainable:Hide();
 			
-
+			
 			-- transmog collected icon
 			apptint.transmogIcon = apptint:CreateTexture(nil, "OVERLAY", nil, 7);
 			apptint.transmogIcon:SetSize(20, 20);
@@ -576,7 +633,11 @@ SetupCustomPanel = function(frame)
 			apptint.transmogIcon:SetAtlas("Crosshair_Transmogrify_32");
 			apptint.transmogIcon:SetScript("OnEnter", function(self)
 				GameTooltip:SetOwner(self, "ANCHOR_TOP");
-				GameTooltip:SetText(TRANSMOGRIFY_TOOLTIP_APPEARANCE_KNOWN);
+				if self:IsDesaturated() then -- transmog takes a relog for it to learn after tint is unlocked
+					GameTooltip_AddErrorLine(GameTooltip, OPTION_LOGOUT_REQUIREMENT);
+				else
+					GameTooltip:SetText(TRANSMOGRIFY_TOOLTIP_APPEARANCE_KNOWN);
+				end
 				GameTooltip:Show();
 			end);
 			apptint.transmogIcon:SetScript("OnLeave", GameTooltip_Hide);
@@ -669,9 +730,9 @@ local function SetupRemixTabs()
 	end
 
 	RemixArtifactFrame.Tabs = {}
-    local frameName = RemixArtifactFrame:GetName()
+	local frameName = RemixArtifactFrame:GetName()
 
-    -- traits
+	-- traits
 	local tab1 = CreateFrame("Button", frameName.."Tab1", RemixArtifactFrame, "PanelTabButtonTemplate")
 	tab1:SetID(1)
 	tab1:SetText(L["Traits"])
