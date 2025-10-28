@@ -1,3 +1,7 @@
+# 0.0.5
+
+Removed hidden artifact obtainable status - Despite Blizzard's bluepost once saying these were going to be obtainable, these are not in fact currently obtainable in remix.
+
 # 0.0.4
 
 quick fix to false desaturated transmog icon on unobtainable tints (oops)
