@@ -1,3 +1,7 @@
+# 0.0.6
+
+Removed 3rd row 3rd tint's obtainable status (+5 keystone complete) - the achievements required to unlock these are not obtainable in remix.
+
 # 0.0.5
 
 Removed hidden artifact obtainable status - Despite Blizzard's bluepost once saying these were going to be obtainable, these are not in fact currently obtainable in remix.
