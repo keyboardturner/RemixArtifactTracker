@@ -1,10 +1,9 @@
 Allows for tracking the Legion Artifact Tints from anywhere in the game, particularly useful as Legion Remix doesn't have an artifact forge available.
 
 The current available artifact appearances in Legion remix include:
-- Classic (Basic class campaign)
-- Upgraded
-- Valorous (Balance of Power)
-- Hidden
+- Classic (Basic class campaign) - all tints
+- Upgraded - 1st, 2nd, and 3rd tints
+- Valorous (Balance of Power) - 1st, 2nd, and 4th tints
 
 Other appearances in Remix are currently unavailable to progress toward - however, many you can unlock via your warband achievements, such as the PvP appearances.
 
