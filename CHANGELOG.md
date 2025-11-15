@@ -1,3 +1,7 @@
+# 0.0.7
+
+Undo the hidden artifacts being unobtainable as per November 14, 2025 hotfixes
+
 # 0.0.6
 
 Removed 3rd row 3rd tint's obtainable status (+5 keystone complete) - the achievements required to unlock these are not obtainable in remix.

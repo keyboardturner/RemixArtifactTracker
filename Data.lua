@@ -55,9 +55,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 29,	color = -14423239,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43666} },	unobtainableRemix = true },
-					{ modifiedID = 30,	color = -7197721,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = -1367775,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 29,	color = -14423239,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43666} }, },
+					{ modifiedID = 30,	color = -7197721,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = -1367775,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = -1577950,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -121,9 +121,9 @@ rat.AppSwatchData = {
 				camera = { posX = 4.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				secondaryCamera = { posX = 2, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 5*math.pi / 6, pitch = 0, },
 				tints = {
-					{ modifiedID = 29,	color = 15582755,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43664} }, unobtainableRemix = true },
-					{ modifiedID = 30,	color = 15857826,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = 8724213,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 29,	color = 15582755,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43664} }, },
+					{ modifiedID = 30,	color = 15857826,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = 8724213,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = 15990784,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -187,9 +187,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 3*math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 26,	color = -6146097,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43665} }, unobtainableRemix = true },
-					{ modifiedID = 25,	color = -9641147,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 27,	color = -3729643,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 26,	color = -6146097,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43665} }, },
+					{ modifiedID = 25,	color = -9641147,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 27,	color = -3729643,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 28,	color = -8892,		tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -250,9 +250,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 30,	color = 12313145,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43649} }, unobtainableRemix = true },
-					{ modifiedID = 29,	color = 3595433,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = 10438369,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 30,	color = 12313145,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43649} }, },
+					{ modifiedID = 29,	color = 3595433,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = 10438369,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = 15485771,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -305,9 +305,9 @@ rat.AppSwatchData = {
 			},
 			[6] = { -- Hidden
 				tints = {
-					{ modifiedID = 26,	color = -7812810,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43650} }, unobtainableRemix = true },
-					{ modifiedID = 25,	color = -13123135,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 27,	color = -8641594,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 26,	color = -7812810,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43650} }, },
+					{ modifiedID = 25,	color = -13123135,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 27,	color = -8641594,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 28,	color = -1692130,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -366,9 +366,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 26,	color = -10008885,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43654} }, unobtainableRemix = true },
-					{ modifiedID = 25,	color = 3800902,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 27,	color = 13369344,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 26,	color = -10008885,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43654} }, },
+					{ modifiedID = 25,	color = 3800902,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 27,	color = 13369344,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 28,	color = -13534254,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -442,9 +442,9 @@ rat.AppSwatchData = {
 				secondaryCamera = { posX = 3, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = 3*math.pi / 2, pitch = .75, },
 				animation = 0,
 				tints = {
-					{ displayID = 69834,	modifiedID = 29,	color = 9460011,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43652} }, unobtainableRemix = true },
-					{ displayID = 69835,	modifiedID = 30,	color = 0,			tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ displayID = 69833,	modifiedID = 31,	color = 14804457,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ displayID = 69834,	modifiedID = 29,	color = 9460011,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43652} }, },
+					{ displayID = 69835,	modifiedID = 30,	color = 0,			tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ displayID = 69833,	modifiedID = 31,	color = 14804457,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ displayID = 69832,	modifiedID = 32,	color = 5590868,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -512,9 +512,9 @@ rat.AppSwatchData = {
 				camera = { posX = 4, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .7, facing = 7*math.pi / 4, pitch = 0, },
 				secondaryCamera = { posX = 3, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi/2, pitch = .75, },
 				tints = {
-					{ displayID = 66721,	modifiedID = 29,	color = 8346917,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43653} }, unobtainableRemix = true },
-					{ displayID = 66720,	modifiedID = 30,	color = 4948674,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ displayID = 66722,	modifiedID = 31,	color = 14826299,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ displayID = 66721,	modifiedID = 29,	color = 8346917,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43653} }, },
+					{ displayID = 66720,	modifiedID = 30,	color = 4948674,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ displayID = 66722,	modifiedID = 31,	color = 14826299,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ displayID = 66723,	modifiedID = 32,	color = 16777215,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -572,9 +572,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 4.8, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 28,	color = -664011,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43651} }, unobtainableRemix = true },
-					{ modifiedID = 26,	color = -4037147,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 27,	color = -1621953,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 28,	color = -664011,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43651} }, },
+					{ modifiedID = 26,	color = -4037147,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 27,	color = -1621953,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 25,	color = -11569184,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -640,9 +640,9 @@ rat.AppSwatchData = {
 				camera = { posX = 4.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = 3*math.pi / 2, pitch = -0.75, },
 				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 23,	color = 15378707,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43681} }, unobtainableRemix = true },
-					{ modifiedID = 21,	color = 4626147,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 22,	color = 8975941,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 23,	color = 15378707,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43681} }, },
+					{ modifiedID = 21,	color = 4626147,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 22,	color = 8975941,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 24,	color = 11216875,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -700,9 +700,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 32,	color = -912107,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43679} }, unobtainableRemix = true },
-					{ modifiedID = 30,	color = -801193,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = -8393915,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 32,	color = -912107,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43679} }, },
+					{ modifiedID = 30,	color = -801193,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = -8393915,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 29,	color = -8446177,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -761,9 +761,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 32,	color = -593911,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43680} }, unobtainableRemix = true },
-					{ modifiedID = 30,	color = -947406,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 29,	color = -13455920,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 32,	color = -593911,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43680} }, },
+					{ modifiedID = 30,	color = -947406,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 29,	color = -13455920,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 31,	color = -908952,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -820,9 +820,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 31,	color = 15237920,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43672} }, unobtainableRemix = true },
-					{ modifiedID = 30,	color = 7068985,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 29,	color = 3399656,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 31,	color = 15237920,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43672} }, },
+					{ modifiedID = 30,	color = 7068985,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 29,	color = 3399656,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = 15470865,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -881,9 +881,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 3.2, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = -0.1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 27,	color = 4252894,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43670} }, unobtainableRemix = true },
-					{ modifiedID = 26,	color = 15671585,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 25,	color = 4153830,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 27,	color = 4252894,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43670} }, },
+					{ modifiedID = 26,	color = 15671585,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 25,	color = 4153830,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 28,	color = 15724561,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -938,9 +938,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 4.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = -.1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 29,	color = -12876564,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43671} }, unobtainableRemix = true },
-					{ modifiedID = 30,	color = -12197728,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = -1726161,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 29,	color = -12876564,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43671} }, },
+					{ modifiedID = 30,	color = -12197728,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = -1726161,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = -7522082,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1000,9 +1000,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 4.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = -.1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 29,	color = -12721948,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43646} }, unobtainableRemix = true },
-					{ modifiedID = 30,	color = -8591536,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = -9487678,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 29,	color = -12721948,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43646} }, },
+					{ modifiedID = 30,	color = -8591536,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = -9487678,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = -2274742,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1060,9 +1060,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 4.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 26,	color = 9318892,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43648} }, unobtainableRemix = true },
-					{ modifiedID = 25,	color = 3256556,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 27,	color = 16342826,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 26,	color = 9318892,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43648} }, },
+					{ modifiedID = 25,	color = 3256556,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 27,	color = 16342826,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 28,	color = 2359283,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1121,9 +1121,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 4.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 30,	color = 11005024,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43647} }, unobtainableRemix = true },
-					{ modifiedID = 29,	color = 5632492,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = 10506186,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 30,	color = 11005024,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43647} }, },
+					{ modifiedID = 29,	color = 5632492,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = 10506186,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = 14303810,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1189,9 +1189,9 @@ rat.AppSwatchData = {
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				secondaryCamera = { posX = 4, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = 3*math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 32,	color = -14095125,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43673} }, unobtainableRemix = true },
-					{ modifiedID = 30,	color = -6687949,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = -616140,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 32,	color = -14095125,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43673} }, },
+					{ modifiedID = 30,	color = -6687949,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = -616140,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 29,	color = -13155356,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1256,9 +1256,9 @@ rat.AppSwatchData = {
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				secondaryCamera = { posX = 3, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = 3*math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 30,	color = -11741379,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43675} }, unobtainableRemix = true },
-					{ modifiedID = 29,	color = -13091353,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = -6999868,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 30,	color = -11741379,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43675} }, },
+					{ modifiedID = 29,	color = -13091353,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = -6999868,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = -3002834,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1323,9 +1323,9 @@ rat.AppSwatchData = {
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 32,	color = 3271909,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43674} }, unobtainableRemix = true },
-					{ modifiedID = 30,	color = 15433770,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = 8533229,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 32,	color = 3271909,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43674} }, },
+					{ modifiedID = 30,	color = 15433770,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = 8533229,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 29,	color = 4488680,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1384,9 +1384,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = 5*math.pi/4, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 25,	color = 2459070,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43656} }, unobtainableRemix = true },
-					{ modifiedID = 26,	color = 10483279,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 27,	color = 15539999,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 25,	color = 2459070,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43656} }, },
+					{ modifiedID = 26,	color = 10483279,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 27,	color = 15539999,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 28,	color = 3204308,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1444,9 +1444,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 25,	color = 14512207,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43657} }, unobtainableRemix = true },
-					{ modifiedID = 26,	color = 12749187,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 27,	color = 10895581,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 25,	color = 14512207,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43657} }, },
+					{ modifiedID = 26,	color = 12749187,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 27,	color = 10895581,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 28,	color = 15614997,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1504,9 +1504,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 4, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = 3*math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 30,	color = 15906095,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43655} },	unobtainableRemix = true  },
-					{ modifiedID = 29,	color = 3647438,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = 13772326,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 30,	color = 15906095,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43655} },  },
+					{ modifiedID = 29,	color = 3647438,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = 13772326,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = 7293000,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1565,9 +1565,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 6.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 30,	color = -1268449,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43668} }, unobtainableRemix = true },
-					{ modifiedID = 29,	color = -9214362,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = -6363950,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 30,	color = -1268449,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43668} }, },
+					{ modifiedID = 29,	color = -9214362,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = -6363950,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = -9654287,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1621,9 +1621,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 30,	color = 16160515,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43669} }, unobtainableRemix = true },
-					{ modifiedID = 29,	color = 11855925,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = 7736308,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 30,	color = 16160515,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43669} }, },
+					{ modifiedID = 29,	color = 11855925,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = 7736308,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = 16711680,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1681,9 +1681,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 4.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 22,	color = -6195025,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43667} }, unobtainableRemix = true },
-					{ modifiedID = 21,	color = -14523614,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 23,	color = -9167598,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 22,	color = -6195025,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43667} }, },
+					{ modifiedID = 21,	color = -14523614,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 23,	color = -9167598,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 24,	color = -2916814,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1742,9 +1742,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 5.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 28,	color = 16711680,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43678} }, unobtainableRemix = true },
-					{ modifiedID = 26,	color = 4907757,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 27,	color = 2745662,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 28,	color = 16711680,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43678} }, },
+					{ modifiedID = 26,	color = 4907757,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 27,	color = 2745662,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 25,	color = 7614128,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1802,9 +1802,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 4, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 24,	color = 12074983,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43676} }, unobtainableRemix = true },
-					{ modifiedID = 22,	color = 4519215,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 21,	color = 2238949,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 24,	color = 12074983,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43676} }, },
+					{ modifiedID = 22,	color = 4519215,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 21,	color = 2238949,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 23,	color = 15740205,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1875,9 +1875,9 @@ rat.AppSwatchData = {
 				secondaryCamera = { posX = 3.5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				animation = 213,
 				tints = {
-					{ modifiedID = 29,	color = -10433586,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43677} }, unobtainableRemix = true },
-					{ modifiedID = 30,	color = -5196074,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = -10385949,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 29,	color = -10433586,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43677} }, },
+					{ modifiedID = 30,	color = -5196074,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = -10385949,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = -1934476,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1936,9 +1936,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 4, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = -.1, facing = math.pi/2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 23,	color = 2075252,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43662} }, unobtainableRemix = true },
-					{ modifiedID = 22,	color = 15828300,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 21,	color = 1455345,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 23,	color = 2075252,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43662} }, },
+					{ modifiedID = 22,	color = 15828300,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 21,	color = 1455345,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 24,	color = 16716288,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -1993,9 +1993,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 3.6, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = -.3, facing = math.pi/2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 31,	color = -1678775,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43661} }, unobtainableRemix = true },
-					{ modifiedID = 30,	color = 5102690,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 29,	color = 4544235,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 31,	color = -1678775,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43661} }, },
+					{ modifiedID = 30,	color = 5102690,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 29,	color = 4544235,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = 6174372,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -2054,9 +2054,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 3, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = -.1, facing = math.pi/2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 25,	color = 4170722,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43673} }, unobtainableRemix = true },
-					{ modifiedID = 26,	color = 5634632,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 27,	color = 16728898,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 25,	color = 4170722,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43673} }, },
+					{ modifiedID = 26,	color = 5634632,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 27,	color = 16728898,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 28,	color = 13954047,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -2122,9 +2122,9 @@ rat.AppSwatchData = {
 				camera = { posX = 4.8, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				secondaryCamera = { posX = 3, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = .1, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 29,	color = 7327470,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43659} }, unobtainableRemix = true },
-					{ modifiedID = 30,	color = 7874729,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = 15090499,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 29,	color = 7327470,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43659} }, },
+					{ modifiedID = 30,	color = 7874729,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = 15090499,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = 15724491,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -2182,9 +2182,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 5, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 29,	color = 9523675,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43658} }, unobtainableRemix = true },
-					{ modifiedID = 30,	color = 15217459,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 31,	color = 4624867,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 29,	color = 9523675,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43658} }, },
+					{ modifiedID = 30,	color = 15217459,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 31,	color = 4624867,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 32,	color = 14935620,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -2242,9 +2242,9 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 4.7, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = 0, facing = math.pi / 2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 21,	color = 14517529,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43660} }, unobtainableRemix = true },
-					{ modifiedID = 22,	color = 11999467,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, unobtainableRemix = true },
-					{ modifiedID = 23,	color = 11006016,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, unobtainableRemix = true },
+					{ modifiedID = 21,	color = 14517529,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43660} }, },
+					{ modifiedID = 22,	color = 11999467,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
+					{ modifiedID = 23,	color = 11006016,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 24,	color = 2663653,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
 				},
 			},
@@ -2838,4 +2838,4 @@ rat.ClassArtifacts = {
 	}
 };
 
---rat.ClassArtifacts.ROGUE = rat.ClassArtifacts.DEBUG -- (for testing, do not add to final version)
+--rat.ClassArtifacts.DEMONHUNTER = rat.ClassArtifacts.DEBUG -- (for testing, do not add to final version)
