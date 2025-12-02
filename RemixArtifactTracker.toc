@@ -1,4 +1,4 @@
-## Interface: 110205
+## Interface: 110207
 ## Title: Remix Artifact Tracker
 ## Notes: Adds a way to track artifact appearances from anywhere in the game
 ## Author: Keyboardturner

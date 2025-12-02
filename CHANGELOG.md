@@ -1,3 +1,7 @@
+# 0.0.8
+
+11.2.7 toc update
+
 # 0.0.7
 
 Undo the hidden artifacts being unobtainable as per November 14, 2025 hotfixes
