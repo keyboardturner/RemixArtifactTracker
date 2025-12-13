@@ -1,3 +1,7 @@
+# 0.0.9
+
+Fix error in Windwalker hidden artifact not displayed as unlocked after being obtained (was set to the Elemental shaman hidden artifact ID)
+
 # 0.0.8
 
 11.2.7 toc update

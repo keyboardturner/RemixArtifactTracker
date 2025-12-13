@@ -2054,7 +2054,7 @@ rat.AppSwatchData = {
 			[6] = { -- Hidden
 				camera = { posX = 3, posY = 0, posZ = 0, targetX = 0, targetY = 0, targetZ = -.1, facing = math.pi/2, pitch = -0.75, },
 				tints = {
-					{ modifiedID = 25,	color = 4170722,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43673} }, },
+					{ modifiedID = 25,	color = 4170722,	tooltip = L["TraitRow6Tint1Req"],	req = { quests = {43663} }, },
 					{ modifiedID = 26,	color = 5634632,	tooltip = L["TraitRow6Tint2Req"],	req = { quests = {}, achievements = {11152}, charspecific = true }, },
 					{ modifiedID = 27,	color = 16728898,	tooltip = L["TraitRow6Tint3Req"],	req = { quests = {}, achievements = {11153}, charspecific = true }, },
 					{ modifiedID = 28,	color = 13954047,	tooltip = L["TraitRow6Tint4Req"],	req = { quests = {}, achievements = {11154}, charspecific = true },	unobtainableRemix = true },
