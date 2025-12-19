@@ -1,3 +1,13 @@
+# 0.1.0
+
+Added indication for warband-wide tints signified by a blue outline and tooltip line.
+
+Added list of characters who earned the specific tint of an artifact weapon when holding shift over a tint
+
+Added a checkbox and menu setting frame to display all artifact weapons in the dropdown menu
+
+Modified how the default frame scaled with the user's screen size to potentially fit on the screen better
+
 # 0.0.9
 
 Fix error in Windwalker hidden artifact not displayed as unlocked after being obtained (was set to the Elemental shaman hidden artifact ID)

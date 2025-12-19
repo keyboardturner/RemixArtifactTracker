@@ -41,6 +41,25 @@ local function ToggleStandaloneFrame()
 		--RemixStandaloneFrame:SetMovable(true)
 		RemixStandaloneFrame:EnableMouse(true)
 
+		local screenWidth = GetScreenWidth()
+		local screenHeight = GetScreenHeight()
+		local frameWidth = 1618
+		local frameHeight = 883
+		
+		local scale = 1 
+
+		if frameWidth > screenWidth then
+			scale = screenWidth / frameWidth
+		end
+
+		if (frameHeight * scale) > screenHeight then
+			scale = screenHeight / frameHeight
+		end
+
+		if scale < 1 then
+			RemixStandaloneFrame:SetScale(scale * 0.95)
+		end
+
 		tinsert(UISpecialFrames, RemixStandaloneFrame:GetName())
 		--RemixStandaloneFrame:RegisterForDrag("LeftButton")
 		--RemixStandaloneFrame:SetScript("OnDragStart", RemixStandaloneFrame.StartMoving)
