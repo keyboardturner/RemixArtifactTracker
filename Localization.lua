@@ -45,6 +45,7 @@ if LOCALE == "enUS" then
 	L["NotCollectedBy"] = "Not collected by any tracked characters"
 	L["ShowAllClasses"] = "Show All Classes"
 	L["Settings"] = SETTINGS
+	L["WarbandWide"] = ITEM_UPGRADE_DISCOUNT_TOOLTIP_ACCOUNT_WIDE
 
 	L["TraitRow1Temp_Classic"]		 = "Classic"
 	L["TraitRow2Temp_Upgraded"]		 = "Upgraded"
@@ -418,6 +419,7 @@ if LOCALE == "esMX" then
 	L["NotCollectedBy"] = "No recogido por ningún personaje rastreado"
 	L["ShowAllClasses"] = "Mostrar todas las clases"
 	L["Settings"] = SETTINGS
+	L["WarbandWide"] = ITEM_UPGRADE_DISCOUNT_TOOLTIP_ACCOUNT_WIDE
 
 	L["TraitRow1Temp_Classic"]		 = "Clásico"
 	L["TraitRow2Temp_Upgraded"]		 = "Mejorado"
@@ -790,6 +792,7 @@ if LOCALE == "esES" then
 	L["NotCollectedBy"] = "No recogido por ningún personaje rastreado"
 	L["ShowAllClasses"] = "Mostrar todas las clases"
 	L["Settings"] = SETTINGS
+	L["WarbandWide"] = ITEM_UPGRADE_DISCOUNT_TOOLTIP_ACCOUNT_WIDE
 
 	L["TraitRow1Temp_Classic"]		 = "Clásico"
 	L["TraitRow2Temp_Upgraded"]		 = "Mejorado"
@@ -1162,6 +1165,7 @@ if LOCALE == "deDE" then
 	L["NotCollectedBy"] = "Von keinem verfolgten Charakter gesammelt"
 	L["ShowAllClasses"] = "Alle Klassen anzeigen"
 	L["Settings"] = SETTINGS
+	L["WarbandWide"] = ITEM_UPGRADE_DISCOUNT_TOOLTIP_ACCOUNT_WIDE
 
 	L["TraitRow1Temp_Classic"]		 = "Klassisch"
 	L["TraitRow2Temp_Upgraded"]		 = "Verbessert"
@@ -1534,6 +1538,7 @@ if LOCALE == "frFR" then
 	L["NotCollectedBy"] = "Non collecté par les personnages suivis"
 	L["ShowAllClasses"] = "Afficher toutes les classes"
 	L["Settings"] = SETTINGS
+	L["WarbandWide"] = ITEM_UPGRADE_DISCOUNT_TOOLTIP_ACCOUNT_WIDE
 
 	L["TraitRow1Temp_Classic"]		 = "Classique"
 	L["TraitRow2Temp_Upgraded"]		 = "Améliorée"
@@ -1906,6 +1911,7 @@ if LOCALE == "itIT" then
 	L["NotCollectedBy"] = "Non raccolto da alcun personaggio tracciato"
 	L["ShowAllClasses"] = "Mostra tutte le classi"
 	L["Settings"] = SETTINGS
+	L["WarbandWide"] = ITEM_UPGRADE_DISCOUNT_TOOLTIP_ACCOUNT_WIDE
 
 	L["TraitRow1Temp_Classic"]		 = "Classico"
 	L["TraitRow2Temp_Upgraded"]		 = "Potenziato"
@@ -2278,6 +2284,7 @@ if LOCALE == "ptBR" then
 	L["NotCollectedBy"] = "Não obtido por nenhum personagem rastreado"
 	L["ShowAllClasses"] = "Mostrar todas as classes"
 	L["Settings"] = SETTINGS
+	L["WarbandWide"] = ITEM_UPGRADE_DISCOUNT_TOOLTIP_ACCOUNT_WIDE
 
 	L["TraitRow1Temp_Classic"]		 = "Clássico"
 	L["TraitRow2Temp_Upgraded"]		 = "Aprimorado"
@@ -2652,6 +2659,7 @@ if LOCALE == "ruRU" then
 	L["NotCollectedBy"] = "Не собрано ни одним отслеживаемым персонажем"
 	L["ShowAllClasses"] = "Показать все классы"
 	L["Settings"] = SETTINGS
+	L["WarbandWide"] = ITEM_UPGRADE_DISCOUNT_TOOLTIP_ACCOUNT_WIDE
 
 	L["TraitRow1Temp_Classic"]		 = "классический вид"
 	L["TraitRow2Temp_Upgraded"]		 = "улучшенный вид"
@@ -3024,6 +3032,7 @@ if LOCALE == "koKR" then
 	L["NotCollectedBy"] = "추적 중인 캐릭터가 수집하지 않음"
 	L["ShowAllClasses"] = "모든 직업 표시"
 	L["Settings"] = SETTINGS
+	L["WarbandWide"] = ITEM_UPGRADE_DISCOUNT_TOOLTIP_ACCOUNT_WIDE
 
 	L["TraitRow1Temp_Classic"]		 = "기본"
 	L["TraitRow2Temp_Upgraded"]		 = "강화된"
@@ -3396,6 +3405,7 @@ if LOCALE == "zhCN" then
 	L["NotCollectedBy"] = "未被任何已追踪角色收集"
 	L["ShowAllClasses"] = "显示所有职业"
 	L["Settings"] = SETTINGS
+	L["WarbandWide"] = ITEM_UPGRADE_DISCOUNT_TOOLTIP_ACCOUNT_WIDE
 
 	L["TraitRow1Temp_Classic"]		 = "经典"
 	L["TraitRow2Temp_Upgraded"]		 = "进阶"
@@ -3768,6 +3778,7 @@ if LOCALE == "zhTW" then
 	L["NotCollectedBy"] = "未被任何已追蹤角色收集"
 	L["ShowAllClasses"] = "顯示所有職業"
 	L["Settings"] = SETTINGS
+	L["WarbandWide"] = ITEM_UPGRADE_DISCOUNT_TOOLTIP_ACCOUNT_WIDE
 
 	L["TraitRow1Temp_Classic"]		 = "經典"
 	L["TraitRow2Temp_Upgraded"]		 = "進階"

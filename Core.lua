@@ -312,6 +312,18 @@ RefreshSwatches = function(frame)
 				-- tint swatch color
 				swatchButton.swatch:SetVertexColor(UISwatchColorToRGB(tintData.color));
 
+				-- check if account-wide
+				local isAccountWide = false
+				if tintData.req and tintData.req.achievements and #tintData.req.achievements > 0 and not tintData.req.charspecific then
+					isAccountWide = true
+				end
+
+				if isAccountWide then
+					swatchButton.border:SetVertexColor(0.0, 0.7, 1.0)
+				else
+					swatchButton.border:SetVertexColor(1, 1, 1)
+				end
+
 				-- swatch locked
 				local isUnobtainable = isRowUnobtainable or (isTimerunner and tintData.unobtainableRemix)
 				swatchButton.unobtainable:SetShown(isUnobtainable)
@@ -335,6 +347,10 @@ RefreshSwatches = function(frame)
 						end
 
 						GameTooltip_AddNormalLine(GameTooltip, data.tooltip)
+
+						if isAccountWide then
+							GameTooltip:AddLine(L["WarbandWide"], 0.0, 0.7, 1.0)
+						end
 
 						-- hidden artifact progress
 						if data.req and data.req.achievements then
