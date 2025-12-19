@@ -112,39 +112,45 @@ local function SetModelCamera(modelFrame, cameraData)
 end
 
 local function AreRequirementsMet(req)
+	if not req then return true end
+	
+	-- if tables are empty, it's the base appearance (collected)
+	local hasQuests = req.quests and #req.quests > 0
+	local hasAchievements = req.achievements and #req.achievements > 0
+	if not hasQuests and not hasAchievements then return true; end
+
 	-- check quests
-	if req.quests then
-		if req.any then
-			local anyComplete = false;
-			for _, questID in ipairs(req.quests) do
-				if C_QuestLog.IsQuestFlaggedCompleted(questID) then
-					anyComplete = true;
-					break; -- the "collect 1 of the pillars" thing
-				end
-			end
-			if not anyComplete then
-				return false;
-			end
-		else
-			for _, questID in ipairs(req.quests) do
-				if not C_QuestLog.IsQuestFlaggedCompleted(questID) then
-					return false;
-				end
+	if hasQuests then
+		local questMet = false;
+		for _, questID in ipairs(req.quests) do
+			if C_QuestLog.IsQuestFlaggedCompleted(questID) then 
+				questMet = true;
+				if req.any then break; end
+			elseif not req.any then
+				questMet = false; break; -- the "collect 1 of the pillars" thing
 			end
 		end
+		if not questMet then return false; end
 	end
 
 	-- check achievements
-	if req.achievements then
+	if hasAchievements then
+		local achMet = false
 		for _, achID in ipairs(req.achievements) do
 			local _, _, _, completed, _, _, _, _, _, _, _, _, wasEarnedByMe = GetAchievementInfo(achID)
-
-			if (req.charspecific and not wasEarnedByMe) or (not req.charspecific and not completed) then -- some achieves aren't really warbound and tints want the char-specific ones
-				return false;
+			local isDone = (req.charspecific and wasEarnedByMe) or (not req.charspecific and completed)  -- some achieves aren't really warbound and tints want the char-specific ones
+			
+			if isDone then
+				achMet = true
+				if req.any then break end
+			elseif not req.any then
+				achMet = false; break
 			end
 		end
+		if not achMet then return false end
 	end
-	return true;
+
+	return true
 end
 
 local function GetAchievementProgress(achievementID)
@@ -193,6 +199,17 @@ SelectSwatch = function(swatchButton)
 	local specID = frame.attachedItemID
 	local specData = rat.AppSwatchData[specID]
 	if not specData then return end
+	
+	local isCollected = false
+	local charName = UnitName("player") .. "-" .. GetRealmName()
+	local db = RemixArtifactTracker_DB and RemixArtifactTracker_DB[charName]
+	
+	if db and db.appearances and swatchButton.parentSpecID then
+		local specAppearances = db.appearances[swatchButton.parentSpecID]
+		if specAppearances and swatchButton.swatchData then
+			isCollected = specAppearances[swatchButton.swatchData.modifiedID]
+		end
+	end
 
 	local appearanceData = specData.appearances[swatchButton.rowIndex]
 	local tintData = swatchButton.swatchData -- selected tint data
@@ -290,6 +307,7 @@ RefreshSwatches = function(frame)
 			if tintData then
 				-- set the swatch data for the button
 				swatchButton.swatchData = tintData;
+				swatchButton.parentSpecID = specID;
 
 				-- tint swatch color
 				swatchButton.swatch:SetVertexColor(UISwatchColorToRGB(tintData.color));
@@ -301,45 +319,87 @@ RefreshSwatches = function(frame)
 
 				-- swatch tooltip
 				if tintData.tooltip then
-					swatchButton:SetScript("OnEnter", function(self)
-						GameTooltip:SetOwner(self, "ANCHOR_TOP");
-						if isTimerunner and tintData.unobtainableRemix then
+					local currentItemID = specData.itemID
+
+					local function UpdateTooltip(button)
+						if not button.swatchData or not button.parentSpecID then return end
+						local data = button.swatchData
+						
+						GameTooltip:SetOwner(button, "ANCHOR_TOP")
+						
+						if isTimerunner and data.unobtainableRemix then
 							GameTooltip_AddErrorLine(GameTooltip, L["Unavailable"]);
 						end
 						if isRowUnobtainable then
 							GameTooltip_AddErrorLine(GameTooltip, L["NoLongerAvailable"]);
 						end
-						GameTooltip_AddNormalLine(GameTooltip, tintData.tooltip);
+
+						GameTooltip_AddNormalLine(GameTooltip, data.tooltip)
 
 						-- hidden artifact progress
-						if tintData.req and tintData.req.achievements then
-							local achID = tintData.req.achievements[1]
+						if data.req and data.req.achievements then
+							local achID = data.req.achievements[1]
 							if achID and trackableAchievements[achID] then
-								-- check if the base appearance has been unlocked
-								local baseTintUnlocked = false
-								if tintsToDisplay[1] and tintsToDisplay[1].req then
-									baseTintUnlocked = AreRequirementsMet(tintsToDisplay[1].req)
-								else
-									baseTintUnlocked = true
-								end
-								
-								if baseTintUnlocked then
+								local baseUnlocked = (not tintsToDisplay[1].req) or AreRequirementsMet(tintsToDisplay[1].req)
+								if baseUnlocked then
 									local current, total = GetAchievementProgress(achID)
 									if current and total then
-										local progressText = string.format("\n(%d / %d)", current, total)
-										GameTooltip:AddLine(progressText)
-										GameTooltip:Show() -- refresh the tooltip to show the new line
+										GameTooltip:AddLine(string.format("\n(%d / %d)", current, total)) 
 									end
 								end
 							end
 						end
 
+						-- warband logic
+						local artifactClass = nil
+						for classToken, artifacts in pairs(rat.ClassArtifacts) do
+							for _, id in ipairs(artifacts) do
+								if id == button.parentSpecID then
+									artifactClass = classToken
+									break
+								end
+							end
+						end
+
+						if IsShiftKeyDown() and data.modifiedID then
+							local collectors = {}
+							for name, charData in pairs(RemixArtifactTracker_DB or {}) do
+								if charData.appearances then
+									local charApps = charData.appearances[currentItemID]
+									if charApps and charApps[data.modifiedID] then
+										local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[charData.class or "PRIEST"]
+										table.insert(collectors, string.format("|c%s%s|r", color.colorStr, name))
+									end
+								end
+							end
+
+							if #collectors > 0 then
+								GameTooltip:AddLine("\n"..L["CollectedBy"], 1, 0.82, 0)
+								for _, coloredName in ipairs(collectors) do
+									GameTooltip:AddLine(coloredName)
+								end
+							else
+								GameTooltip:AddLine("\n" .. L["NotCollectedBy"], 0.5, 0.5, 0.5)
+							end
+						else
+							GameTooltip:AddLine("\n"..L["HoldSHIFT"], 0.5, 0.5, 0.5)
+						end
 						GameTooltip:Show();
-					end)
+					end
+
+					swatchButton:SetScript("OnEnter", UpdateTooltip);
 					swatchButton:SetScript("OnLeave", GameTooltip_Hide);
+					
+					swatchButton:RegisterEvent("MODIFIER_STATE_CHANGED");
+					swatchButton:SetScript("OnEvent", function(self, event, key)
+						if (key == "LSHIFT" or key == "RSHIFT") and self:IsMouseOver() then
+							UpdateTooltip(self);
+						end
+					end)
 				else
 					swatchButton:SetScript("OnEnter", nil);
 					swatchButton:SetScript("OnLeave", nil);
+					swatchButton:UnregisterEvent("MODIFIER_STATE_CHANGED");
 				end
 
 				-- transmog collected
@@ -656,6 +716,7 @@ SetupCustomPanel = function(frame)
 
 		-- artifact select dropdown (might not be added to release version - instead filter to only current class)
 		local function ArtifactSelector_GenerateMenu(_, rootDescription)
+			rootDescription:SetScrollMode(300)
 			local function SetSelected(data)
 				frame.attachedItemID = data;
 				-- set the override flag to true when user manually selects from dropdown
@@ -667,31 +728,109 @@ SetupCustomPanel = function(frame)
 				return data == frame.attachedItemID;
 			end
 
-			rootDescription:CreateTitle(L["Artifact"])
+			local function AddArtifactsForClass(token)
+				local artifacts = rat.ClassArtifacts[token]
+				if artifacts then
+					local displayName = LOCALIZED_CLASS_NAMES_MALE[token] or token
+					rootDescription:CreateTitle(displayName)
 
-			local _, classToken = UnitClass("player")
-			local classArtifacts = rat.ClassArtifacts and rat.ClassArtifacts[classToken]
+					for _, specID in ipairs(artifacts) do
+						local itemID = rat.AppSwatchData[specID].itemID
+						local itemName = C_Item.GetItemNameByID(itemID) or ("Item " .. itemID);
+						rootDescription:CreateRadio(itemName, IsSelected, SetSelected, specID);
+					end
+				end
+			end
 
-			if classArtifacts and #classArtifacts > 0 then
-				table.sort(classArtifacts);
+			if panel.showAllClasses then
+				local classes = {}
+				for token in pairs(rat.ClassArtifacts) do
+					if token ~= "DEBUG" and token ~= "EVOKER" and token ~= "Adventurer" then
+						table.insert(classes, token)
+					end
+				end
+				table.sort(classes)
 
-				for _, specID in ipairs(classArtifacts) do
-					local OldWeaponName = rat.AppSwatchData[specID].itemID
-					local itemName = C_Item.GetItemNameByID(OldWeaponName) or ("Item " .. OldWeaponName);
-					rootDescription:CreateRadio(itemName, IsSelected, SetSelected, specID);
+				for _, classToken in ipairs(classes) do
+					AddArtifactsForClass(classToken)
 				end
 			else
-				rootDescription:CreateTitle(L["Unavailable"]);
+				local _, playerClass = UnitClass("player")
+				AddArtifactsForClass(playerClass)
 			end
 		end
 
-		-- artifact select dropdown (might not be added to release version - instead filter to only current class)
+		-- artifact select dropdown
 		local dropdown = CreateFrame("DropdownButton", nil, panel, "WowStyle1DropdownTemplate");
 		dropdown:SetPoint("TOP", forgebg, "TOP", 0, -10);
 		dropdown:SetWidth(300);
 		dropdown:SetDefaultText(L["Artifact"]);
 		dropdown:SetupMenu(ArtifactSelector_GenerateMenu);
 		panel.artifactSelectorDropdown = dropdown;
+		
+		if not RemixArtifactTracker_DB then RemixArtifactTracker_DB = {} end
+		if not RemixArtifactTracker_DB.Settings then RemixArtifactTracker_DB.Settings = {} end
+		
+		panel.showAllClasses = RemixArtifactTracker_DB.Settings.ShowAllClasses or false
+
+		local settingsButton = CreateFrame("Button", nil, panel)
+		settingsButton:SetPoint("LEFT", panel.artifactSelectorDropdown, "RIGHT", 10, 0)
+		settingsButton:SetSize(20, 20)
+		settingsButton:SetNormalAtlas("QuestLog-icon-setting")
+		settingsButton:SetHighlightAtlas("QuestLog-icon-setting")
+		
+		settingsButton:SetScript("OnMouseDown", function(self)
+			self:GetNormalTexture():SetTexCoord(-0.075, 0.925, -0.075, 0.925)
+			self:GetHighlightTexture():SetTexCoord(-0.075, 0.925, -0.075, 0.925)
+		end)
+		settingsButton:SetScript("OnMouseUp", function(self)
+			self:GetNormalTexture():SetTexCoord(0, 1, 0, 1)
+			self:GetHighlightTexture():SetTexCoord(0, 1, 0, 1)
+		end)
+
+		local settingsFrame = CreateFrame("Frame", "RAT_SettingsFrame", panel)
+		settingsFrame:SetSize(250, 100)
+		settingsFrame:SetPoint("TOPLEFT", settingsButton, "BOTTOMRIGHT", 5, -5)
+		settingsFrame:SetFrameLevel(panel:GetFrameLevel() + 20)
+		settingsFrame:EnableMouse(true)
+		settingsFrame:Hide()
+
+		local settingsBg = settingsFrame:CreateTexture(nil, "BACKGROUND", nil, 0)
+		settingsBg:SetAllPoints()
+		settingsBg:SetAtlas("housing-basic-container")
+		settingsBg:SetTextureSliceMargins(64, 64, 64, 112)
+		settingsBg:SetTextureSliceMode(Enum.UITextureSliceMode.Stretched)
+
+		local closeBtn = CreateFrame("Button", nil, settingsFrame, "UIPanelCloseButtonNoScripts")
+		closeBtn:SetPoint("TOPRIGHT", -5, -5)
+		closeBtn:SetScript("OnClick", function() settingsFrame:Hide() end)
+
+		local title = settingsFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+		title:SetPoint("TOP", 0, -15)
+		title:SetText(L["Settings"])
+
+		local showAllCb = CreateFrame("CheckButton", nil, settingsFrame, "ChatConfigCheckButtonTemplate")
+		showAllCb:SetPoint("TOPLEFT", 20, -40)
+		showAllCb.Text:SetText(L["ShowAllClasses"])
+		showAllCb:SetChecked(panel.showAllClasses)
+		showAllCb:SetScript("OnClick", function(self)
+			local checked = self:GetChecked()
+			panel.showAllClasses = checked
+			RemixArtifactTracker_DB.Settings.ShowAllClasses = checked
+			panel.artifactSelectorDropdown:GenerateMenu()
+		end)
+
+		settingsButton:SetScript("OnClick", function()
+			settingsFrame:SetShown(not settingsFrame:IsShown())
+		end)
+		settingsButton:SetScript("OnEnter", function(self)
+			GameTooltip:SetOwner(self, "ANCHOR_TOP")
+			GameTooltip:AddLine(L["Settings"])
+			GameTooltip:Show()
+		end)
+		settingsButton:SetScript("OnLeave", function(self)
+			GameTooltip:Hide()
+		end)
 		
 		-- update the dropdown text once the item name is loaded from the server
 		if not panel.itemInfoListener then
@@ -795,5 +934,61 @@ local function OnArtifactTreeChanged()
 end
 
 EventRegistry:RegisterCallback("RemixArtifactFrame.SetTreeID", OnSetTreeID)
--- Register our new callback to listen for changes.
 EventRegistry:RegisterCallback("RemixArtifactFrame.SetTreeID", OnArtifactTreeChanged)
+
+local function IsTintUnlockedLocally(tintData)
+	local hasQuests = tintData.req and tintData.req.quests and #tintData.req.quests > 0
+	local hasAchievements = tintData.req and tintData.req.achievements and #tintData.req.achievements > 0
+
+	if not hasQuests and not hasAchievements then
+		return true
+	end
+
+	-- check achievements
+	if hasAchievements then
+		for _, achID in ipairs(tintData.req.achievements) do
+			local _, _, _, completed = GetAchievementInfo(achID)
+			if completed then return true end
+		end
+	end
+
+	-- check quests
+	if hasQuests then
+		for _, questID in ipairs(tintData.req.quests) do
+			if C_QuestLog.IsQuestFlaggedCompleted(questID) then return true end
+		end
+	end
+
+	return false
+end
+
+local function UpdateCharacterCollection()
+	RemixArtifactTracker_DB = RemixArtifactTracker_DB or {}
+	local _, classToken = UnitClass("player")
+	local charName = UnitName("player") .. "-" .. GetRealmName()
+	
+	RemixArtifactTracker_DB[charName] = RemixArtifactTracker_DB[charName] or { appearances = {}, class = classToken }
+	
+	local classArtifacts = rat.ClassArtifacts[classToken]
+	if classArtifacts then
+		for _, specID in ipairs(classArtifacts) do
+			local specData = rat.AppSwatchData[specID]
+			if specData and specData.itemID and specData.appearances then
+				local itemID = specData.itemID
+				RemixArtifactTracker_DB[charName].appearances[itemID] = {} 
+				
+				for _, app in ipairs(specData.appearances) do
+					for _, tint in ipairs(app.tints) do
+						if AreRequirementsMet(tint.req) then
+							RemixArtifactTracker_DB[charName].appearances[itemID][tint.modifiedID] = true
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+local loginFrame = CreateFrame("Frame")
+loginFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
+loginFrame:SetScript("OnEvent", UpdateCharacterCollection)

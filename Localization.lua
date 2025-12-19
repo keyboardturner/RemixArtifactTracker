@@ -40,6 +40,11 @@ if LOCALE == "enUS" then
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
 	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
+	L["CollectedBy"] = "Collected by:"
+	L["HoldSHIFT"] = "<Hold SHIFT to see Warband list>"
+	L["NotCollectedBy"] = "Not collected by any tracked characters"
+	L["ShowAllClasses"] = "Show All Classes"
+	L["Settings"] = SETTINGS
 
 	L["TraitRow1Temp_Classic"]		 = "Classic"
 	L["TraitRow2Temp_Upgraded"]		 = "Upgraded"
@@ -408,6 +413,11 @@ if LOCALE == "esMX" then
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
 	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
+	L["CollectedBy"] = "Recogido por:"
+	L["HoldSHIFT"] = "<Mantén MAYÚS para ver la lista de la banda de guerra>"
+	L["NotCollectedBy"] = "No recogido por ningún personaje rastreado"
+	L["ShowAllClasses"] = "Mostrar todas las clases"
+	L["Settings"] = SETTINGS
 
 	L["TraitRow1Temp_Classic"]		 = "Clásico"
 	L["TraitRow2Temp_Upgraded"]		 = "Mejorado"
@@ -775,6 +785,11 @@ if LOCALE == "esES" then
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
 	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
+	L["CollectedBy"] = "Recogido por:"
+	L["HoldSHIFT"] = "<Mantén MAYÚS para ver la lista de la banda de guerra>"
+	L["NotCollectedBy"] = "No recogido por ningún personaje rastreado"
+	L["ShowAllClasses"] = "Mostrar todas las clases"
+	L["Settings"] = SETTINGS
 
 	L["TraitRow1Temp_Classic"]		 = "Clásico"
 	L["TraitRow2Temp_Upgraded"]		 = "Mejorado"
@@ -1142,6 +1157,11 @@ if LOCALE == "deDE" then
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
 	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
+	L["CollectedBy"] = "Gesammelt von:"
+	L["HoldSHIFT"] = "<UMSCHALT gedrückt halten, um die Kriegsmeutenliste anzuzeigen>"
+	L["NotCollectedBy"] = "Von keinem verfolgten Charakter gesammelt"
+	L["ShowAllClasses"] = "Alle Klassen anzeigen"
+	L["Settings"] = SETTINGS
 
 	L["TraitRow1Temp_Classic"]		 = "Klassisch"
 	L["TraitRow2Temp_Upgraded"]		 = "Verbessert"
@@ -1509,6 +1529,11 @@ if LOCALE == "frFR" then
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
 	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
+	L["CollectedBy"] = "Collecté par :"
+	L["HoldSHIFT"] = "<Maintenez MAJ pour voir la liste de la bande de guerre>"
+	L["NotCollectedBy"] = "Non collecté par les personnages suivis"
+	L["ShowAllClasses"] = "Afficher toutes les classes"
+	L["Settings"] = SETTINGS
 
 	L["TraitRow1Temp_Classic"]		 = "Classique"
 	L["TraitRow2Temp_Upgraded"]		 = "Améliorée"
@@ -1876,6 +1901,11 @@ if LOCALE == "itIT" then
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
 	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
+	L["CollectedBy"] = "Raccolto da:"
+	L["HoldSHIFT"] = "<Tieni premuto MAIUSC per vedere l'elenco della Brigata>"
+	L["NotCollectedBy"] = "Non raccolto da alcun personaggio tracciato"
+	L["ShowAllClasses"] = "Mostra tutte le classi"
+	L["Settings"] = SETTINGS
 
 	L["TraitRow1Temp_Classic"]		 = "Classico"
 	L["TraitRow2Temp_Upgraded"]		 = "Potenziato"
@@ -2243,6 +2273,11 @@ if LOCALE == "ptBR" then
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
 	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
+	L["CollectedBy"] = "Obtido por:"
+	L["HoldSHIFT"] = "<Mantenha SHIFT pressionado para ver a lista da banda de guerra>"
+	L["NotCollectedBy"] = "Não obtido por nenhum personagem rastreado"
+	L["ShowAllClasses"] = "Mostrar todas as classes"
+	L["Settings"] = SETTINGS
 
 	L["TraitRow1Temp_Classic"]		 = "Clássico"
 	L["TraitRow2Temp_Upgraded"]		 = "Aprimorado"
@@ -2612,6 +2647,11 @@ if LOCALE == "ruRU" then
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
 	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
+	L["CollectedBy"] = "Собрано персонажами:"
+	L["HoldSHIFT"] = "<Удерживайте SHIFT, чтобы увидеть список боевого отряда>"
+	L["NotCollectedBy"] = "Не собрано ни одним отслеживаемым персонажем"
+	L["ShowAllClasses"] = "Показать все классы"
+	L["Settings"] = SETTINGS
 
 	L["TraitRow1Temp_Classic"]		 = "классический вид"
 	L["TraitRow2Temp_Upgraded"]		 = "улучшенный вид"
@@ -2979,6 +3019,11 @@ if LOCALE == "koKR" then
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
 	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
+	L["CollectedBy"] = "수집한 캐릭터:"
+	L["HoldSHIFT"] = "<SHIFT 키를 누르면 전투부대 목록을 표시합니다>"
+	L["NotCollectedBy"] = "추적 중인 캐릭터가 수집하지 않음"
+	L["ShowAllClasses"] = "모든 직업 표시"
+	L["Settings"] = SETTINGS
 
 	L["TraitRow1Temp_Classic"]		 = "기본"
 	L["TraitRow2Temp_Upgraded"]		 = "강화된"
@@ -3346,6 +3391,11 @@ if LOCALE == "zhCN" then
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
 	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
+	L["CollectedBy"] = "收集者："
+	L["HoldSHIFT"] = "<按住 SHIFT 查看战团列表>"
+	L["NotCollectedBy"] = "未被任何已追踪角色收集"
+	L["ShowAllClasses"] = "显示所有职业"
+	L["Settings"] = SETTINGS
 
 	L["TraitRow1Temp_Classic"]		 = "经典"
 	L["TraitRow2Temp_Upgraded"]		 = "进阶"
@@ -3713,6 +3763,11 @@ if LOCALE == "zhTW" then
 	L["Artifact"] = ITEM_QUALITY6_DESC
 	L["Unavailable"] = UNAVAILABLE
 	L["NoLongerAvailable"] = NO_LONGER_AVAILABLE
+	L["CollectedBy"] = "收集角色："
+	L["HoldSHIFT"] = "<按住 SHIFT 查看戰團列表>"
+	L["NotCollectedBy"] = "未被任何已追蹤角色收集"
+	L["ShowAllClasses"] = "顯示所有職業"
+	L["Settings"] = SETTINGS
 
 	L["TraitRow1Temp_Classic"]		 = "經典"
 	L["TraitRow2Temp_Upgraded"]		 = "進階"

@@ -4,6 +4,7 @@
 ## Author: Keyboardturner
 ## Version: @project-version@
 ## IconTexture: Interface/Icons/inv_glaive_1h_artifactazgalor_d_02dual.blp
+## SavedVariables: RemixArtifactTracker_DB
 
 ## X-Curse-Project-ID: 1350667
 ## X-Wago-ID: n6VPz8Gd
