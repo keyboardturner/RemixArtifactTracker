@@ -1,3 +1,7 @@
+# 0.1.1
+
+12.0.0 toc update
+
 # 0.1.0
 
 Added indication for warband-wide tints signified by a blue outline and tooltip line.
